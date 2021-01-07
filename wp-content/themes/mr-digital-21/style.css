@@ -1,0 +1,65 @@
+/*
+Theme Name: Mr-Digital
+Theme URI: mr-digital.co.uk
+Author: Gopu
+Author URI: mr-digital.co.uk
+Description: Mr-Digital Theme
+Version: 2.0
+License: GNU General Public License v2 or later
+*/
+
+.footer-subs .join {
+    margin-bottom: 12px !important;
+}
+.content-panel {
+    font-size: 18px;
+}
+.wp-pagenavi {
+    clear: both;
+    float: right;
+    margin-top: 10px;
+}
+.wp-pagenavi span.pages {
+    display: none;
+}
+.wp-pagenavi a.page.larger, .nextpostslink {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: solid 2px #dde4d7;
+    margin-left: 4px;
+    color: #758f60;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+.wp-pagenavi span.current
+{
+    background-color: #ffd347;
+    border-color: #ffd347 !important;
+    color: #000;
+    text-decoration: none;
+ display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+text-align: center;
+}
+.casestudy .casestudy_slider .item .item_caption h3 a {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.casestudy .casestudy_slider .item .item_caption_over h3 {
+    font-weight: bold;
+    font-size: 28px;
+  }
+.casestudy .casestudy_slider .item:after{
+  bottom: 11px;
+}
+.single_case_study p{
+  color: #3a3a3a;
+  line-height: 30px;
+}
