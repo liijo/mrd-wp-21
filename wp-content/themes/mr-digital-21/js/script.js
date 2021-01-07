@@ -224,14 +224,14 @@ jQuery(document).ready(function($){
 });
 
 var a = 0;
-$(window).scroll(function() {
-	if($('#counter').length){
-		var oTop = $('#counter').offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
-			$('.counter-value').each(function() {
-				var $this = $(this),
+jQuery(window).scroll(function() {
+	if(jQuery('#counter').length){
+		var oTop = jQuery('#counter').offset().top - window.innerHeight;
+		if (a == 0 && jQuery(window).scrollTop() > oTop) {
+			jQuery('.counter-value').each(function() {
+				var $this = jQuery(this),
 				countTo = $this.attr('data-count');
-				$({
+				jQuery({
 					countNum: $this.text()
 				}).animate({
 					countNum: countTo
@@ -253,16 +253,16 @@ $(window).scroll(function() {
 });
 
 jQuery(window).scroll(function(){
-	var headerTop = $('header').height();
-	if($('header').hasClass('short-header')){
+	var headerTop = jQuery('header').height();
+	if(jQuery('header').hasClass('short-header')){
 		headerTop = 1;
 	}
-    if($(this).scrollTop() >= headerTop){
-    	$('#top-bar').removeClass('position-absolute');
-    	$('#top-bar').addClass('position-fixed visible');
+    if(jQuery(this).scrollTop() >= headerTop){
+    	jQuery('#top-bar').removeClass('position-absolute');
+    	jQuery('#top-bar').addClass('position-fixed visible');
     }
     else{
-    	$('#top-bar').addClass('position-absolute');
-    	$('#top-bar').removeClass('position-fixed visible');	
+    	jQuery('#top-bar').addClass('position-absolute');
+    	jQuery('#top-bar').removeClass('position-fixed visible');	
 	}
 });
