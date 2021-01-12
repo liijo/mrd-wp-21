@@ -770,7 +770,7 @@
 .footer-panel ul li:before {
     content: '';
     position: absolute;
-    top: 13px;
+    top: 20px;
     left: 0;
     width: 6px;
     height: 6px;

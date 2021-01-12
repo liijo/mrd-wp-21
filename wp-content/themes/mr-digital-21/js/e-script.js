@@ -4,7 +4,7 @@ jQuery(document).ready(function(){
 		loop:true,
 		margin: 0,
 		nav:true,
-		navText:['<img src="images/icon-arrow-prev.png" alt="prev">','<img src="images/icon-arrow-next.png" alt="next">'],
+		navText: ['<span class="icon-left-arrow"></span>', '<span class="icon-next-arrow"></span>'],
 		responsive:{
 			0:{
 				items:1

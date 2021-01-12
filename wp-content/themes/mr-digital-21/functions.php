@@ -1,4 +1,19 @@
 <?php
+/**
+ * Activates Theme Mode
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+
+/**
+ * Loads OptionTree
+ */
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+
+/**
+ * Loads Theme Options
+ */
+require( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
+
 add_theme_support( 'post-thumbnails' );
 if (function_exists('add_image_size')) {
 	add_image_size('video_testimonial_t', 623, 520, true);
@@ -7,6 +22,7 @@ if (function_exists('add_image_size')) {
 	add_image_size('testimonial_logo', 179, 46, true);
 	add_image_size('team', 173, 173, true);
 	add_image_size('checklist', 144, 118, true);
+	add_image_size('podcast_t', 343, 228, true);
 }
 
 function theme_register_nav_menu(){
@@ -51,3 +67,36 @@ if (!function_exists('theme_init_script')){
 }
 
 include 'inc/post-types.php';
+
+//Custom excerpt length
+function mrd_get_the_excerpt($length, $postId){
+	$excerpt = get_the_excerpt($postId);
+	$nExcerpt = substr($excerpt, 0, $length);
+	return $nExcerpt;
+}
+
+function mrd_widgets_init() {
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Logos', 'mrdigital' ),
+	        'id'            => 'mrd-footer-logo-widgets',
+	        'description'   => __( 'Widgets in this area will show logos in the footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="col-md-3 col-lg-3 widget %2$s">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<h2 class="widget-title">',
+	        'after_title'   => '</h2>',        
+    	)
+    );
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Widgets', 'mrdigital' ),
+	        'id'            => 'mrd-footer-widgets',
+	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="col-xl-3 col-md-12 widget %2$s"><div class="footer-panel ">',
+	        'after_widget'  => '</div></div>',
+	        'before_title'  => '<h4 class="widget-title">',
+	        'after_title'   => '</h4>',        
+    	)
+    );
+}
+add_action( 'widgets_init', 'mrd_widgets_init' );

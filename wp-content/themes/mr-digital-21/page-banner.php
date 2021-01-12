@@ -1,6 +1,6 @@
 <?php 
 $id = get_the_id(); 
-$banner = (get_field('background_image')) ? get_field('background_image') : bloginfo('template_directory') . '/images/banner.jpg';
+$banner = (get_field('background_image')) ? get_field('background_image') : get_bloginfo('template_directory') . '/images/banner.jpg';
 ?>
 <section class="main-slider">
     <div id="banner" style="background-image: url(<?php echo $banner; ?>)">
