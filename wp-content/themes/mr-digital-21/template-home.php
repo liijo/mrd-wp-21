@@ -18,57 +18,7 @@ get_header(); ?>
         </section><!-- .blurb -->
     <?php endif;?>
 
-    <section class="result-oriented grey">
-        <div class="container">
-            <div class="text-center">
-                <?php $vTestimony = get_field('video_testimonial'); 
-                if( ! empty ($vTestimony['section_title']) ){?>
-                <h3 class="section-title mb-3">
-                    <?php echo $vTestimony['section_title'];?>
-                </h3>
-                <?php }
-                if( ! empty ($vTestimony['section_subtitle']) ){?>
-                <p class="mb-5"><?php echo $vTestimony['section_subtitle'];?></p>
-                <?php } ?>
-            </div>
-
-            <?php $args = array( 'post_type' => 'testimonials_video', 'showposts' => 6 );
-            $testimonyQuery = new WP_Query($args);
-            if($testimonyQuery->have_posts()): ?>
-                <div class="result-slider owl-carousel">
-                <?php while($testimonyQuery->have_posts()): $testimonyQuery->the_post(); ?>
-                    <div class="item">
-                        <div class="item-content mb-3">
-                            <?php if( ! empty (get_field('thumbnail') ) ){
-                                $thumbnail = get_field('thumbnail');
-                                ?><img src="<?php echo $thumbnail['sizes']['video_testimonial_t']; ?>" alt=" " /><?php
-                            }  ?>
-                            <div class="play-button">
-                                <a href="#" class="btn-play">
-                                    <span class="icon-play-button-arrowhead"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <figure class="d-flex align-items-center">
-                                <?php if(get_field('client_logo')) echo '<img src="'.get_field('client_logo').'" alt="" />'; ?>
-                                <figcaption>
-                                    <strong><?php the_title(); ?></strong> 
-                                    <?php if(get_field('designation')){?>
-                                    <p class="mb-0"><?php echo get_field('designation'); ?></p>
-                                    <?php } ?>
-                                </figcaption>
-                            </figure>
-                        </div>
-
-                    </div>
-                <?php endwhile; ?>
-                </div>
-            <?php endif; 
-            wp_reset_query(); ?>
-
-        </div>
-    </section><!-- .result-oriented grey -->
+    <?php get_template_part( 'template-testimonial', 'slider' ); ?>   
 
     <section class="dev-stages">
         <div class="container">
@@ -110,27 +60,11 @@ get_header(); ?>
         </div>
     </section><!-- Dev-stages -->
 
-    <?php get_template_part( 'result', 'count' ); ?>
+    <?php get_template_part( 'template-result', 'count' ); ?>
 
     <section class="case-studies pt-5 mt-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <?php $devStage = get_field('case_studies');
-                if( ! empty ($devStage['section_title']) ){?>
-                <h3 class="section-title mb-3">
-                    <?php echo $devStage['section_title'];?>
-                </h3>
-                <?php }
-                if( ! empty ($devStage['section_subtitle']) ){?>
-                <p class="mb-4"><?php echo $devStage['section_subtitle'];?></p>
-                <?php } 
-                if( ! empty ($devStage['section_content']) ){?>
-                <p class="small"><?php echo $devStage['section_content'];?></p>
-                <?php } ?>
-            </div>
-        </div>
-        <?php get_template_part( 'case-studies', 'slider' ); ?>        
-    </section><!-- case studies -->
+        <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
+    </section> <!-- case studies -->
 
     <section class="testimonial pt-5 mt-5">
         <div class="container">
@@ -325,7 +259,9 @@ get_header(); ?>
         </div>
     </section><!-- Checklist -->
 
-    <?php get_template_part( 'strategy', 'session' ); ?> 
+    <section class="strategy-session mt-5 grey">
+        <?php get_template_part( 'template-strategy', 'session' ); ?> 
+    </section>
 
 <?php endif;?>
 <?php get_footer(); ?>

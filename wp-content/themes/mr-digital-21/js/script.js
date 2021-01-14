@@ -34,6 +34,7 @@ jQuery(window).on('load resize', function(){
 		jQuery('.logo-slider').addClass('off');
 		jQuery('.logo-slider').removeClass('owl-carousel');
 	}
+
 });
 
 jQuery(document).ready(function($){
@@ -82,7 +83,7 @@ jQuery(document).ready(function($){
 		dots: false,
 		autoplay: true,
 		autoplayHoverPause:true,
-		loop: true,
+		loop: false,
 		items: 3,
 		margin: 30,
 		nav: true,
@@ -221,6 +222,55 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('overflow-hidden');
 	});
 
+	$('.launch-modal').click(function(){
+		var postId = $(this).data('id');
+		$('.loader-2').addClass('spinner-border');
+		$.ajax({
+	        url: frontend_ajax_object.ajaxurl,
+	        type: 'post',
+	        data: {
+	            'action' : 'get_popup_content',
+	            'postId' : postId
+	        },
+	        success: function( response ) {
+	        	console.log(response);
+	            $('#exampleModalLabel').html(response.title);
+	            $('#modal-body').html(response.image);
+	            $('.loader-2').removeClass('spinner-border');
+	            $('#prevpost').data('id', response.prevpost);
+	            $('#nextpost').data('id', response.nextpost);
+	        },
+	    });
+	});
+
+	$('#load-more').click(function(e){
+		e.preventDefault();
+		$('.loader-3').addClass('spinner-border');
+		var btn = $(this);
+		var offset = $('input[name=offset]').val();
+		var term = $('select[name=work_category]').val();
+		var ptype = $(this).data('ptype');
+		$.ajax({
+	        url: frontend_ajax_object.ajaxurl,
+	        type: 'post',
+	        data: {
+	            'action' : 'get_post_set',
+	            'offset' : offset,
+	            'ptype' : ptype,
+	            'term' : term
+	        },
+	        success: function( response ) {
+	        	$('.loader-3').removeClass('spinner-border');
+	            $('#works').append(response.html);
+	            $('input[name=offset]').val(parseInt(offset)+6);
+	            if($('#works > div').length == $('input[name=total-posts]').val()){
+	            	$( '<p class="alert alert-primary">No more posts</p>' ).insertAfter( '#load-more' );
+	            	btn.remove();
+	            }
+	        },
+	    });
+	});
+
 });
 
 var a = 0;
@@ -265,4 +315,10 @@ jQuery(window).scroll(function(){
     	jQuery('#top-bar').addClass('position-absolute');
     	jQuery('#top-bar').removeClass('position-fixed visible');	
 	}
+});
+
+var myModalEl = document.getElementById('csModal')
+myModalEl.addEventListener('hidden.bs.modal', function (event) {
+	document.getElementById('exampleModalLabel').innerHTML = '';
+	document.getElementById('modal-body').innerHTML = '';
 });

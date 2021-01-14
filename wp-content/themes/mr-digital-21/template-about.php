@@ -62,7 +62,7 @@ get_header(); ?>
     </section>
     <?php endif;?>
 
-    <?php get_template_part( 'result', 'count' ); ?>
+    <?php get_template_part( 'template-result', 'count' ); ?>
 
     <?php if( have_rows('content_blocks') ):?>
     <!-- ===== SECTION ===== -->

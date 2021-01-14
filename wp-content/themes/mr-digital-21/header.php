@@ -73,7 +73,7 @@
 
         </div><!-- .row end -->
 
-        <?php get_template_part( 'page', 'banner' ); ?>
+        <?php get_template_part( 'template-page', 'banner' ); ?>
 
     </header>
     <!-- header -->

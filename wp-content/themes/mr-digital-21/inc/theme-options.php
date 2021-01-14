@@ -14,7 +14,9 @@ function mrdigital_customize_register( $wp_customize ) {
 		'enquire',
 		'featured_logo',
 		'result_count',
-		'strategy_session'
+		'strategy_session',
+		'deliver_results',
+		'case_studies'
 	);
 	foreach ($settingsArr as $tSettings){
 		$wp_customize->add_setting( $tSettings , 
@@ -92,6 +94,30 @@ function mrdigital_customize_register( $wp_customize ) {
 		    	'label'          => __( 'Select template for strategy session', 'theme_name' ),
 	            'section'        => 'general',
 	            'settings'       => 'strategy_session',
+	            'type'           => 'text',
+			) 
+		) 
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 
+			'deliver_results', 
+			array(
+		    	'label'          => __( 'Select template for deliver results', 'theme_name' ),
+	            'section'        => 'general',
+	            'settings'       => 'deliver_results',
+	            'type'           => 'text',
+			) 
+		) 
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 
+			'case_studies', 
+			array(
+		    	'label'          => __( 'Select template for case studies', 'theme_name' ),
+	            'section'        => 'general',
+	            'settings'       => 'case_studies',
 	            'type'           => 'text',
 			) 
 		) 

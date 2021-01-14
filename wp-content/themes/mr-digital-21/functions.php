@@ -1,19 +1,4 @@
 <?php
-/**
- * Activates Theme Mode
- */
-add_filter( 'ot_theme_mode', '__return_true' );
-
-/**
- * Loads OptionTree
- */
-require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
-
-/**
- * Loads Theme Options
- */
-require( trailingslashit( get_template_directory() ) . 'inc/theme-options.php' );
-
 add_theme_support( 'post-thumbnails' );
 if (function_exists('add_image_size')) {
 	add_image_size('video_testimonial_t', 623, 520, true);
@@ -55,6 +40,11 @@ if (!function_exists('theme_init_script')){
 		wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js', array(), '1.0.0', true);
 		wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
 		wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
+		wp_localize_script( 'script', 'frontend_ajax_object',
+	        array( 
+	            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	        )
+	    );
 		wp_enqueue_script('e-script', get_template_directory_uri() . '/js/e-script.js', array('jquery'), '1.0.0', true);
         
         wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
@@ -100,3 +90,23 @@ function mrd_widgets_init() {
     );
 }
 add_action( 'widgets_init', 'mrd_widgets_init' );
+
+add_action('wp_ajax_nopriv_get_popup_content', 'getPopupContent');
+add_action('wp_ajax_get_popup_content', 'getPopupContent');
+function getPopupContent(){
+	$title = get_the_title($_POST['postId']);
+	$prev_post = get_adjacent_post( true, '', true, '' );
+	$next_post = get_adjacent_post( true, '', false, '' );
+	$image = '';
+	if(get_field('image', $_POST['postId']))
+		$image = '<img src="' . get_field('image', $_POST['postId']) . '" alt="" class="rounded shadow" />';		
+	$retArr = array(
+		'title' => $title, 
+		'image' => $image, 
+		'prevpost' => $prev_post->ID, 
+		'nextpost' => $next_post->ID
+	);
+	wp_send_json($retArr);
+	die;
+}
+

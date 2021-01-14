@@ -972,6 +972,9 @@ section.strategy{
 	display: inline-block;
 	background-color: #fff;
 }
+.processes .item:last-child .line{
+	display: none;
+}
 .processes .number .num span{	
 	box-shadow: 0px 0px 18px #00000022;
 	color: #E30613;
@@ -1224,4 +1227,8 @@ section.strategy{
 		line-height: 34px;
 		font-size: 28px;
 	}
+}
+
+#ajax-load-more .alm-btn-wrap{
+	text-align: center;
 }

@@ -510,6 +510,8 @@
     text-decoration: underline;
 }
 .cs-view-all-links {
+    border: 0;
+    background: transparent;
     font-size: 14px;
     font-weight: 600;
     color: #E30613;
