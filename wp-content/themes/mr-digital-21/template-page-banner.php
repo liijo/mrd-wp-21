@@ -1,5 +1,7 @@
 <?php 
 $id = get_the_id(); 
+$disable = get_field('disable_banner');
+if(empty($disable)){
 $banner = (get_field('background_image')) ? get_field('background_image') : get_bloginfo('template_directory') . '/images/banner.jpg';
 ?>
 <section class="main-slider">
@@ -49,3 +51,4 @@ $banner = (get_field('background_image')) ? get_field('background_image') : get_
         </div>
     </div>
 </section><!-- .main-slider end -->
+<?php }?>

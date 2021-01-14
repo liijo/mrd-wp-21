@@ -20,7 +20,8 @@
           <![endif]-->
 </head>
    <body <?php body_class(); ?>>
-      <header>
+      <?php $disable = get_field('disable_banner', get_the_id()); ?>
+      <header <?php if(!empty($disable)) echo 'class="short-header"'; ?>>
 
         <div class="position-absolute top-0 start-0 end-0 z-index-9 pt-4" id="top-bar">
             <div class="container">
