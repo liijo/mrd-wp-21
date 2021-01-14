@@ -233,4 +233,49 @@ function create_post_type(){
         )
     );
 
+    register_post_type('events', array(
+        'labels' => array(
+            'name'          => __('Events', 'mrdigital'),
+            'singular_name' => __('Events', 'mrdigital'),
+            'add_new'       => __('Add Events', 'mrdigital'),
+            'add_new_item'  => __('Add Event', 'mrdigital'),
+            'edit'          => __('Edit Event', 'mrdigital'),
+            'edit_item'     => __('Edit Event', 'mrdigital')
+        ),
+        'supports'          => array("title", "thumbnail", "editor"),
+        'public'            => true,
+        'has_archive'       => true,
+        'menu_position'     => 5,
+        'capability_type'   => 'post',
+        'menu_icon'         => 'dashicons-groups',
+        'hierarchical'      => false,
+        'rewrite'           => array('slug' => 'events'),
+        )
+    );
+
+    $labels = array(
+        'name'              => _x( 'Event Category', 'taxonomy general name', 'mrdigital' ),
+        'singular_name'     => _x( 'Event Category', 'taxonomy singular name', 'mrdigital' ),
+        'search_items'      => __( 'Search Event Category', 'mrdigital' ),
+        'all_items'         => __( 'All Event Category', 'mrdigital' ),
+        'parent_item'       => __( 'Parent Event Category', 'mrdigital' ),
+        'parent_item_colon' => __( 'Parent Event Category:', 'mrdigital' ),
+        'edit_item'         => __( 'Edit Event Category', 'mrdigital' ),
+        'update_item'       => __( 'Update Event Category', 'mrdigital' ),
+        'add_new_item'      => __( 'Add New Event Category', 'mrdigital' ),
+        'new_item_name'     => __( 'New Event Category Name', 'mrdigital' ),
+        'menu_name'         => __( 'Event Category', 'mrdigital' ),
+    );
+ 
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'event_category' ),
+    );
+ 
+    register_taxonomy( 'event_category', array( 'events' ), $args );
+
 }

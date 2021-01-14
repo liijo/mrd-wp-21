@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-location:before {
+  content: "\e90e";
+}
+.icon-date:before {
+  content: "\e90f";
+}
+.icon-address:before {
+  content: "\e910";
+}
+.icon-organizer:before {
+  content: "\e911";
+}
 .icon-send:before {
   content: "\e90d";
 }

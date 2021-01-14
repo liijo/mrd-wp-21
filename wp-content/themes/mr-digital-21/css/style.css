@@ -43,12 +43,7 @@
 
 body{
 	font-family: "Avenir Next Regular";
-	font-size: 22px;
-}
-@media (max-width: 1440px){
-	body{
-		font-size: 17px;
-	}
+	font-size: 17px;
 }
 img{
 	max-width: 100%;
@@ -811,6 +806,11 @@ section.strategy{
 	border: 1px solid rgba(227, 6, 19, 0.8);
 	border-radius: 100%;	
 }
+.team-slider figure img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .team-slider .item:hover figure:before,
 .team-slider .item:hover figure:after{
 	-webkit-animation-name: rippleMini;
@@ -1239,4 +1239,28 @@ section.strategy{
 }
 .wpcf7-textarea {
 	max-height: 112px;
+}
+
+/*Events Slider*/
+.events-slider .content-panel {
+    margin: 42px 0 42px -60px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.events-slider .content-panel h3{
+	font-size: 24px;
+}
+.events-slider .icon{
+	margin-right: 17px;
+}
+.events-slider .icon span {
+    display: block;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #E30613;
 }
