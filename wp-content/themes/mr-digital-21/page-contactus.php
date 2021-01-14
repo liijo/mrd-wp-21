@@ -62,5 +62,9 @@
     </div>
 </section>
 
+<section class="strategy-session mt-5 grey border-bottom border-2">
+    <?php get_template_part( 'template-strategy', 'session' ); ?> 
+</section>
+
 <?php endif; ?>
 <?php get_footer(); ?>
