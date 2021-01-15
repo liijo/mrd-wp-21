@@ -9,6 +9,7 @@ if (function_exists('add_image_size')) {
 	add_image_size('checklist', 144, 118, true);
 	add_image_size('podcast_t', 343, 228, true);
 	add_image_size('events', 637, 628, true);
+	add_image_size('blog_t', 412, 290, true);
 }
 
 function theme_register_nav_menu(){

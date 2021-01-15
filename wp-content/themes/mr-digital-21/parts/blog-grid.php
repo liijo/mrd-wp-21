@@ -28,7 +28,7 @@ if($blog->have_posts()):
 				<div class="item-wrap">
 					<figure class="rounded overflow-hidden mb-4">
 						<a href="<?php echo get_permalink(); ?>">
-							<?php echo get_the_post_thumbnail($post->ID, 'events'); ?>
+							<?php echo get_the_post_thumbnail($post->ID, 'blog_t'); ?>
 						</a>
 					</figure>
 					<div class="item-content">
