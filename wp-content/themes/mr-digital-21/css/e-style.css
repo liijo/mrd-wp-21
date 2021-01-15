@@ -347,7 +347,7 @@
 
 
 /* ================= */
-.section-podcast { padding: 110px 0 130px 0; }
+.section-podcast { padding: 100px 0 80px 0; }
 .podcast-carousel .owl-nav {
     position: absolute;
     width: 100%;
@@ -396,7 +396,7 @@
     font-weight: 600;
     color: #E30613;
     position: absolute;
-    padding: 4px 16px;
+    padding: 4px 16px 5px;
     background: #FFFFFF;
     text-transform: uppercase;
     top: 10px;
@@ -504,6 +504,9 @@
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
+}
+.article-cs .article-title a{
+    color: #000;
 }
 .article-cs .article-body a:hover {
     color: #E30613;

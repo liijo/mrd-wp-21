@@ -69,6 +69,9 @@ h1, h2, h3{
 .height-100{
 	height: 100%;
 }
+.rounded-10{
+	border-radius: 10px;
+}
 
 /*Header*/
 #top-bar .container{
@@ -623,7 +626,7 @@ h1, h2, h3{
     font-size: 0;
     line-height: 0;
     width: 10px;
-    height: 3px;
+    height: 6px;
     cursor: pointer;
     color: transparent;
     border: 0;
@@ -894,6 +897,7 @@ section.strategy{
 	margin: 0 15px;
 }
 .checklist-slider .item .wrap{
+	background-color: #fff;
 	padding: 33px 27px;
 	border-radius: 12px;
 	box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.13);
@@ -1244,7 +1248,7 @@ section.strategy{
 /*Events Slider*/
 .events-slider .content-panel {
     margin: 42px 0 42px -60px;
-    padding: 50px;
+    padding: 62px 50px;
     background-color: #fff;
     border-radius: 10px;
 }
@@ -1263,4 +1267,55 @@ section.strategy{
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     color: #E30613;
+}
+.events-slider .copy p{
+	color: #797979;
+}
+.events-slider .copy h4{
+	font-size: 20px;
+	font-family: "Avenir Next Extra Bold";
+}
+
+/*Blog*/
+.blog-slider .item-wrap{
+	position: relative;
+}
+.blog-slider .item-wrap .item-content{
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	padding: 30px;
+}
+.blog-slider .item-wrap > figure{
+	position: relative;
+}
+.blog-slider .item-wrap > figure img{
+	width: 100%;
+}
+.blog-slider .item-wrap > figure:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+}
+.mrd-blogs .post-meta figure {
+	width: 50px;
+}
+.mrd-blogs .item-wrap h3{
+	font-family: "Avenir Next Medium";	
+}
+.blog-slider .item-wrap h3 a{
+	color: #fff;
+}
+
+/*Blog grid*/
+.blog-grid .item-wrap h3 {
+	font-size: 22px;
+	line-height: 40px;
+}
+.blog-grid .item-wrap h3 a{
+	color: #000;
 }

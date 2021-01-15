@@ -137,7 +137,7 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	$('.dev-slider').owlCarousel({
+	$('.dev-slider, .events-slider').owlCarousel({
 		loop: true,
 		nav: false,
 		dots: true,
@@ -162,7 +162,7 @@ jQuery(document).ready(function($){
 		stagePadding: 200,
 		loop:false,
 		margin:30,
-		autoplay:true,
+		autoplay:false,
 		autoplayTimeout:4000,
 		autoplayHoverPause:true,
 		nav:true,
@@ -171,6 +171,37 @@ jQuery(document).ready(function($){
 			1024:{
 				nav: true,
 				items:3
+			},
+			768:{
+				nav: false,
+				items:2
+			},
+			575:{
+				nav: false,
+				items:1
+			},
+			0:{
+				nav: false,
+				items:1
+			}
+		}
+	});
+
+	$('.blog-slider').owlCarousel({
+		dots: true,
+		//center: true,
+		items:2,
+		stagePadding: 200,
+		loop:false,
+		margin:50,
+		autoplay:false,
+		autoplayTimeout:4000,
+		autoplayHoverPause:true,
+		nav:false,
+		responsive:{
+			1024:{
+				nav: false,
+				items:2
 			},
 			768:{
 				nav: false,

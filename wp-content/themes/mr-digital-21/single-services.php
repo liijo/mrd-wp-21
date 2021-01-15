@@ -57,7 +57,7 @@
     </section><!-- process -->
 
     <section class="strategy-session mt-5 grey">
-        <?php get_template_part( 'template-strategy', 'session' ); ?> 
+        <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
 
     <section class="case-studies pt-5 mt-5 border-0">
@@ -167,7 +167,7 @@
     </section>
 
     <section class="strategy-session mt-5 border-bottom border-2 pb-5">
-        <?php get_template_part( 'template-strategy', 'session' ); ?> 
+        <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section><!-- strategy-session -->
 
 <?php endif; ?>

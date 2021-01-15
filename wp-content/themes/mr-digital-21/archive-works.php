@@ -68,7 +68,7 @@
     </section>
 
     <section class="strategy-session mt-5 grey">
-        <?php get_template_part( 'template-strategy', 'session' ); ?> 
+        <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
 
     <!-- Modal -->
