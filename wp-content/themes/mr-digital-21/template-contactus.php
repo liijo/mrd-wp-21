@@ -14,12 +14,14 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-5 mx-auto">
-          <div class="contact-form-panel">
-            <?php echo do_shortcode('[contact-form-7 id="157" title="Contact form 1"]'); ?>
+    <?php if(get_field('contact_form_shortcode')) {?>
+        <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="contact-form-panel">
+                <?php echo do_shortcode(get_field('contact_form_shortcode')); ?>
+            </div>
         </div>
-    </div>
+    <?php }?>
 </div>
 </div>
 </section>
