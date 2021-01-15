@@ -61,7 +61,7 @@ if($events->have_posts()):
 								</div>
 							</div>
 						</div>
-						<a href="#" class="btn btn-primary rounded"><?php echo __('REGISTER NOW') ?><span class="icon-right ps-2"></span></a>
+						<a href="<?php echo get_permalink(); ?>" class="btn btn-primary rounded"><?php echo __('REGISTER NOW') ?><span class="icon-right ps-2"></span></a>
 					</div>
 				</div>
 			</div>

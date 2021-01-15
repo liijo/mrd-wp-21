@@ -200,6 +200,33 @@ function create_post_type(){
         )
     );
 
+    $labels = array(
+        'name'              => _x( 'Podcast Type', 'taxonomy general name', 'mrdigital' ),
+        'singular_name'     => _x( 'Podcast Type', 'taxonomy singular name', 'mrdigital' ),
+        'search_items'      => __( 'Search Podcast Type', 'mrdigital' ),
+        'all_items'         => __( 'All Podcast Type', 'mrdigital' ),
+        'parent_item'       => __( 'Parent Podcast Type', 'mrdigital' ),
+        'parent_item_colon' => __( 'Parent Podcast Type:', 'mrdigital' ),
+        'edit_item'         => __( 'Edit Podcast Type', 'mrdigital' ),
+        'update_item'       => __( 'Update Podcast Type', 'mrdigital' ),
+        'add_new_item'      => __( 'Add New Podcast Type', 'mrdigital' ),
+        'new_item_name'     => __( 'New Podcast Type Name', 'mrdigital' ),
+        'menu_name'         => __( 'Podcast Type', 'mrdigital' ),
+    );
+ 
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'podcast_type' ),
+    );
+ 
+    register_taxonomy( 'podcast_type', array( 'podcast' ), $args );
+    unset( $args );
+    unset( $labels );
+
     register_post_type('services', array(
         'labels' => array(
             'name'          => __('Services', 'gopustheme'),

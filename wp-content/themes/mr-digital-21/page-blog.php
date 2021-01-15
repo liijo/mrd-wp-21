@@ -7,7 +7,7 @@ get_header(); ?>
             <div class="text-center">
                 <h3 class="section-title mb-5 pb-3"><?php echo __('Podcast videos'); ?></h3>
             </div>
-            <?php get_template_part( 'podcast', 'slider' ); ?>
+            <?php get_template_part( 'parts/podcast-video', 'slider' ); ?>
             <div class="mt-5 text-center">
 	            <a href="#" class="btn btn-spotify"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/spotify-label.png" alt="media"></a>
 	         </div>             
@@ -60,7 +60,7 @@ get_header(); ?>
             <div class="text-center">
                 <h3 class="section-title mb-5 pb-3"><?php echo __('Podcast Audios'); ?></h3>
             </div>
-            <?php get_template_part( 'podcast', 'slider' ); ?>
+            <?php get_template_part( 'parts/podcast-audio', 'slider' ); ?>
             <div class="mt-5 text-center">
 	            <a href="#" class="btn btn-spotify"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/spotify-label.png" alt="media"></a>
 	         </div>             

@@ -2,7 +2,7 @@
 <section class="featured">
     <div class="container">
         <div class="row logos d-flex align-items-center justify-content-between">
-            <div class="col-lg-2 col-sm-3"><span><?php echo __('FETURED IN'); ?></span></div>
+            <div class="col-lg-2 col-sm-3"><span><?php echo __('FEATURED IN'); ?></span></div>
             <div class="col-lg-10 col-sm-9">
                 <?php if( have_rows('logos', $logoId) ): ?>
                 <div class="logo-slider">
