@@ -12,17 +12,17 @@ get_header('inner');
             <div class="row">
                 <?php echo get_field('content'); ?>
             </div>
-        </div>
 
-        <?php if(get_field('contact_form_shortcode')) {?>
-            <div class="row">
-                <div class="col-lg-5 mx-auto">
-                    <div class="contact-form-panel">
-                        <?php echo do_shortcode(get_field('contact_form_shortcode')); ?>
+            <?php if(get_field('contact_form_shortcode')) {?>
+                <div class="row">
+                    <div class="col-lg-5 mx-auto">
+                        <div class="contact-form-panel">
+                            <?php echo do_shortcode(get_field('contact_form_shortcode')); ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php }?>
+            <?php }?>
+        </div>
     </section>
 
 <div class="container pb-4">
