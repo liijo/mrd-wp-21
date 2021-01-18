@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-share:before {
+  content: "\e913";
+}
+.icon-twitter:before {
+  content: "\e912";
+}
 .icon-location:before {
   content: "\e90e";
 }

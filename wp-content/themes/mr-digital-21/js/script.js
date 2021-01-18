@@ -302,6 +302,21 @@ jQuery(document).ready(function($){
 	    });
 	});
 
+	if($('#blogSocial').length){
+	    $('#blogSocial').stickySidebar({
+	        topSpacing: 90,
+	        bottomSpacing: 60
+	    });
+	}
+
+	if(document.getElementById('csModal') > 0){
+	var myModalEl = document.getElementById('csModal');
+	myModalEl.addEventListener('hidden.bs.modal', function (event) {
+		document.getElementById('exampleModalLabel').innerHTML = '';
+		document.getElementById('modal-body').innerHTML = '';
+	});
+}
+
 });
 
 var a = 0;
@@ -348,8 +363,3 @@ jQuery(window).scroll(function(){
 	}
 });
 
-var myModalEl = document.getElementById('csModal')
-myModalEl.addEventListener('hidden.bs.modal', function (event) {
-	document.getElementById('exampleModalLabel').innerHTML = '';
-	document.getElementById('modal-body').innerHTML = '';
-});

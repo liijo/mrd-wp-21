@@ -11,6 +11,7 @@ if (function_exists('add_image_size')) {
 	add_image_size('podcast_t', 343, 228, true);
 	add_image_size('events', 637, 628, true);
 	add_image_size('blog_t', 412, 290, true);
+	add_image_size('blog_l', 1300, 574, true);
 }
 
 function theme_register_nav_menu(){
@@ -42,6 +43,8 @@ if (!function_exists('theme_init_script')){
 		if( is_admin() ) return;
 		wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js', array(), '1.0.0', true);
 		wp_enqueue_script('owl', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '1.0.0', true);
+        //if(is_singular())
+        	wp_enqueue_script('fix-div', get_template_directory_uri() . '/js/jquery.sticky-sidebar.min.js', array('jquery'), '1.0.0', true);
 		wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
 		wp_localize_script( 'script', 'frontend_ajax_object',
 	        array( 

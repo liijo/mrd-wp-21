@@ -16,19 +16,27 @@ if($blog->have_posts()):
 						<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
 					</h3>
 					<p><?php echo mrd_get_the_excerpt(300, $post->ID); ?></p>
-					<div class="post-meta d-flex align-items-center">
+					<div class="post-meta d-flex align-items-center justify-content-between">
                         <?php $meta = esc_attr( get_the_author_meta( 'author_image', $user->ID ) );
                 		if ($meta) { 
                 			$image = wp_get_attachment_image_src($meta, 'thumbnail');
                 			$image = $image[0]; 
                 		}
                 		$authorName = esc_attr( get_the_author_meta( 'display_name', $user->ID ) ); ?>
-                        <figure class="overflow-hidden rounded-circle me-3 mb-0">
-                        	<img src="<?php echo $image; ?>" alt="<?php the_author(); ?>">
-                        </figure>
-                        <div>
-                        	<p class="mb-0 fw-bold text-uppercase"><?php echo $authorName; ?></p>
-                        	<time><?php the_date(); ?></time>
+                		<div class="d-flex align-items-center">
+	                        <figure class="overflow-hidden rounded-circle me-3 mb-0">
+	                        	<img src="<?php echo $image; ?>" alt="<?php the_author(); ?>">
+	                        </figure>
+	                        <div>
+	                        	<p class="mb-0 fw-bold text-uppercase"><?php echo $authorName; ?></p>
+	                        	<time><?php the_date(); ?></time>
+	                        </div>
+                        </div>
+                        <div class="share-icons">
+                        	<div class="icon-list">
+                        		<span class="icon-share rounded-circle d-block"></span>
+                        		<?php echo sharethis_inline_buttons(); ?>
+                        	</div>
                         </div>
                     </div>
 				</div>
