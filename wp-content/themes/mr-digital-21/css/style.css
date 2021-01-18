@@ -43,7 +43,7 @@
 
 body{
 	font-family: "Avenir Next Regular";
-	font-size: 17px;
+	font-size: 21px;
 }
 img{
 	max-width: 100%;
@@ -526,6 +526,9 @@ h1, h2, h3{
 .result-slider .item-content .btn-play:hover{
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
+#video iframe{
+	width: 100%;
+}
 
 @media (max-width: 992px){
 	.result-slider .item-footer figure img{
@@ -569,6 +572,16 @@ h1, h2, h3{
 .owl-carousel .owl-nav .owl-next{
 	right: -66px;
 }
+.owl-carousel .owl-dot.active button.owl-dot{
+	opacity: 1;
+	background-color: #E30613;
+}
+.owl-carousel .owl-dot button.owl-dot{
+	font-size: 16px;
+	color: #fff;	
+	width: 25px;
+	height: 25px;
+}
 @media (max-width: 1439px){
 	.owl-carousel .owl-nav .owl-prev {
 	    left: -30px;
@@ -576,6 +589,9 @@ h1, h2, h3{
 	.owl-carousel .owl-nav .owl-next {
 	    right: -30px;
 	}
+}
+.dev-slider.owl-carousel .owl-dot {
+    display: inline-block;
 }
 
 /*dev-stages*/
@@ -652,6 +668,9 @@ h1, h2, h3{
 	font-size: 60px;
 	font-family: "Avenir Next Extra Bold";
 	padding-top: 4rem;
+}
+.counter-wrap .counter:before {
+    content: attr(data-prefix);
 }
 .counter-wrap .counter-caption p{
 	font-size: 17px;
@@ -735,6 +754,7 @@ p.light-grey {
 	margin-bottom: 60px;
 }
 .testim-slider .testim-content p{
+	font-size: 19px;
 	font-style: italic;
 }
 .testim-slider .testim-footer figcaption{
@@ -867,12 +887,18 @@ section.strategy{
 	font-size: 18px;
 	font-family: "Avenir Next Extra Bold";
 }
+.team-slider p{
+	font-size: 18px;
+}
 .team{
 	padding-bottom: 137px;
 	border-bottom: 2px solid rgb(112, 112, 112, .3);
 }
 .team ul.nav{
 	background-color: #F5F5F5;
+}
+.section-title + p{
+	font-size: 22px;
 }
 
 /*purpose*/

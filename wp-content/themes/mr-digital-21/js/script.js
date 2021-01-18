@@ -2,17 +2,6 @@ jQuery(window).on('load resize', function(){
 	var windowHeight = jQuery(window).height();
 	//jQuery('#banner').height(windowHeight);
 	if(jQuery(window).width() > 767){
-		jQuery('.logo-slider').addClass('owl-carousel');
-		jQuery('.logo-slider').owlCarousel({
-			loop:true,
-			margin:0,
-			nav:false,
-			dots:false,
-			items:6,
-			autoplay:true,
-			autoplayTimeout:4000,
-			autoplayHoverPause:true,
-		});
 		jQuery('.service-testim-slider').trigger('destroy.owl.carousel');
 		jQuery('.service-testim-slider').addClass('off');
 		jQuery('.service-testim-slider').removeClass('owl-carousel');
@@ -30,9 +19,6 @@ jQuery(window).on('load resize', function(){
 			autoplayHoverPause:true,
 		});
 
-		jQuery('.logo-slider').trigger('destroy.owl.carousel');
-		jQuery('.logo-slider').addClass('off');
-		jQuery('.logo-slider').removeClass('owl-carousel');
 	}
 
 });
@@ -141,6 +127,7 @@ jQuery(document).ready(function($){
 		loop: true,
 		nav: false,
 		dots: true,
+		dotsData: true,
 		autoplay: true,
 		items: 1,
 		autoplayHoverPause:true,
@@ -273,6 +260,28 @@ jQuery(document).ready(function($){
 	        },
 	    });
 	});
+
+	$('.btn-play').click(function(){
+		var postId = $(this).data('id');
+		$('.loader-2').addClass('spinner-border');
+		$.ajax({
+	        url: frontend_ajax_object.ajaxurl,
+	        type: 'post',
+	        data: {
+	            'action' : 'get_popup_content_video',
+	            'postId' : postId
+	        },
+	        success: function( response ) {
+	        	console.log(response);
+	            $('#video').html(response.video);
+	            $('.loader-2').removeClass('spinner-border');
+	        },
+	    });
+	});
+
+	$('#video-popup .btn-close').click(function(){
+		$('#video').html('');
+	})
 
 	$('#load-more').click(function(e){
 		e.preventDefault();

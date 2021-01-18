@@ -39,8 +39,10 @@ get_header(); ?>
             <div class="clearfix"></div>
             <?php if( have_rows('development_stage_slider') ): ?>
             <div class="dev-slider owl-carousel mt-5">
+                <?php $i = 1; ?>
                 <?php while( have_rows('development_stage_slider') ) : the_row(); ?>
-                <div class="item">
+                <div class="item" data-dot="<button role='button' class='owl-dot'><span><?php echo $i; ?></span></button>">
+                    <?php $i++; ?>
                     <div class="row align-items-center">
                         <div class="col-6">
                             <div class="text-end item-wrap">

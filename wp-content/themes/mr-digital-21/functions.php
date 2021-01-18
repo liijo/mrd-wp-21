@@ -116,3 +116,17 @@ function getPopupContent(){
 	die;
 }
 
+add_action('wp_ajax_nopriv_get_popup_content_video', 'getPopupContentVideo');
+add_action('wp_ajax_get_popup_content_video', 'getPopupContentVideo');
+function getPopupContentVideo(){
+	$title = get_the_title($_POST['postId']);
+	$video = '';
+	if(get_field('video', $_POST['postId']))
+		$video = get_field('video', $_POST['postId']);
+	$retArr = array(
+		'video' => $video, 
+	);
+	wp_send_json($retArr);
+	die;
+}
+

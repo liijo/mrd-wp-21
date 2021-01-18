@@ -24,12 +24,14 @@
                             <?php if( ! empty (get_field('thumbnail') ) ){
                                 $thumbnail = get_field('thumbnail');
                                 ?><img src="<?php echo $thumbnail['sizes']['video_testimonial_t']; ?>" alt=" " /><?php
-                            }  ?>
+                            }  
+                            if(! empty(get_field('thumbnail')) ){?>
                             <div class="play-button">
-                                <a href="#" class="btn-play">
+                                <a href="#" class="btn-play" data-bs-toggle="modal" data-bs-target="#video-popup" data-id="<?php the_id(); ?>">
                                     <span class="icon-play-button-arrowhead"></span>
                                 </a>
                             </div>
+                            <?php } ?>
                         </div>
                         <div class="item-footer">
                             <figure class="d-flex align-items-center">
@@ -48,5 +50,20 @@
                 </div>
             <?php endif; 
             wp_reset_query(); ?>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="video-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                  <div class="modal-body">
+                    <span class="loader-2 text-danger"></span>
+                    <div id="video" class="text-center">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
     </section><!-- .result-oriented grey -->

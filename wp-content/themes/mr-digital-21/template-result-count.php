@@ -13,7 +13,7 @@
                     <div class="counter-bg">
                         <img src="<?php echo get_sub_field('image'); ?>" alt="google" />
                     </div>
-                    <div class="counter counter-value" data-count="<?php echo get_sub_field('count'); ?>">0</div>
+                    <div class="counter counter-value" data-count="<?php echo get_sub_field('count'); ?>" data-prefix="<?php echo get_sub_field('prefix'); ?>">0</div>
                     <div class="counter-caption">
                         <p class="mb-0"><?php echo get_sub_field('title'); ?></p>
                     </div>
