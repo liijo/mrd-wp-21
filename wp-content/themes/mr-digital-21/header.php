@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>
-        <?php wp_title(''); ?>
+        <?php wp_title('|',true,'right'); bloginfo('name'); ?>
     </title>
 
     <link rel="icon" href="<?php bloginfo('template_directory')?>/images/Mr-Digital-Favicon-32x32.png" sizes="32x32" />
