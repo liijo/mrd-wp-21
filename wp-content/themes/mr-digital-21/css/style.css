@@ -349,6 +349,7 @@ h1, h2, h3{
 	background-repeat: no-repeat;
 	background-position: center;
 	position: relative;
+	background-color: #000;
 }
 #banner:before{
 	content: '';
@@ -366,6 +367,9 @@ h1, h2, h3{
 }
 .banner-slider{
 	height: 90%;
+}
+.banner-slider .slider-item{
+	width: 100%;
 }
 .banner-slider .h1{
 	font-family: "Avenir Next Extra Bold";
@@ -440,6 +444,9 @@ h1, h2, h3{
 	    display: inline-block;
 	    padding: 10px;
 	    width: 31.33%;
+	}
+	.logo-slider .item {
+		width: 33.33%;
 	}
 }
 @media (max-width: 320px){

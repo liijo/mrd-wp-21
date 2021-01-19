@@ -3,7 +3,7 @@
 get_header(); ?>
 <?php if (have_posts()) : the_post(); ?>
 
-    <?php get_template_part( 'template-part', 'logos' ); ?>
+    <?php get_template_part( 'parts/featured', 'logos' ); ?>
     <section class="blurb">
         <div class="container">
             <div class="row">

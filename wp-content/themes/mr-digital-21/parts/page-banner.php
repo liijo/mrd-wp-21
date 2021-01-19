@@ -9,7 +9,7 @@ $banner = (get_field('background_image')) ? get_field('background_image') : get_
     <div id="banner" style="background-image: url(<?php echo $banner; ?>)">
         <?php 
         if( have_rows('slider') ): ?>
-        <div class="banner-slider owl-carousel d-flex align-items-center">
+        <div class="banner-slider d-flex align-items-center">
             <?php while( have_rows('slider') ) : the_row(); ?>
                 <div class="slider-item text-center">
                     <div class="container">

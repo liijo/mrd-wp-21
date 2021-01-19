@@ -25,7 +25,7 @@ jQuery(window).on('load resize', function(){
 
 jQuery(document).ready(function($){
 	
-	$('.banner-slider').owlCarousel({
+	/*$('.banner-slider').owlCarousel({
 		loop:true,
 		margin:0,
 		nav:false,
@@ -34,7 +34,7 @@ jQuery(document).ready(function($){
 		autoplay:true,
 		autoplayTimeout:4000,
 		autoplayHoverPause:true,
-	});
+	});*/
 
 	$('.result-slider').owlCarousel({
 		dots: false,

@@ -2,7 +2,7 @@
 /* Template name: Home */
 get_header(); ?>
 
-<?php get_template_part( 'template-part', 'logos' ); ?>
+<?php get_template_part( 'parts/featured', 'logos' ); ?>
 
 <?php if (have_posts()) : the_post(); ?>
     <?php if(get_field('blurb')) :?>
