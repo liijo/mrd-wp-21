@@ -32,7 +32,7 @@ get_header(); ?>
                 <?php } ?>
             </div>
             <div class="mb-5 pb-4">
-            	<?php get_template_part( 'checklist', 'slider' ); ?>
+            	<?php get_template_part( 'parts/checklist', 'slider' ); ?>
            	</div>
         </div>
     </section><!-- Checklist -->
@@ -97,7 +97,7 @@ get_header(); ?>
         </div>
     </section><!-- .section-podcast -->
 
-    <section class="blog-grid pt-4 mt-5 mb-5">
+    <?php /*<section class="blog-grid pt-4 mt-5 mb-5">
     	<div class="container">
         	<div class="text-center">
                 <?php $section = get_field('blog_section');
@@ -112,11 +112,11 @@ get_header(); ?>
 	        	<?php get_template_part('parts/blog', 'grid'); ?>
 	        </div>
         </div>
-    </section><!-- Blog grid -->
+    </section><!-- Blog grid -->*/?>
 
     <div class="clearfix"></div>
 
-    <section class="strategy-session mt-5 grey">
+    <section class="strategy-session mt-5 pt-4 mb-5 pb-5">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
 

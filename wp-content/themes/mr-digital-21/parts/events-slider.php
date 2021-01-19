@@ -68,4 +68,5 @@ if($events->have_posts()):
 		</div><?php
 	endwhile;
 	?></div><?php
-endif;
+endif; 
+wp_reset_query();

@@ -17,11 +17,7 @@ if($blog->have_posts()):
 					</h3>
 					<p><?php echo mrd_get_the_excerpt(300, $post->ID); ?></p>
 					<div class="post-meta d-flex align-items-center justify-content-between">
-                        <?php $meta = esc_attr( get_the_author_meta( 'author_image', $user->ID ) );
-                		if ($meta) { 
-                			$image = wp_get_attachment_image_src($meta, 'thumbnail');
-                			$image = $image[0]; 
-                		}
+                        <?php $image = get_field( 'profile_picture', 'user_'.$post->post_author ) ;
                 		$authorName = esc_attr( get_the_author_meta( 'display_name', $user->ID ) ); ?>
                 		<div class="d-flex align-items-center">
 	                        <figure class="overflow-hidden rounded-circle me-3 mb-0">
