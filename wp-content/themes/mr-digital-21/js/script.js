@@ -218,6 +218,7 @@ jQuery(document).ready(function($){
 		dots: false,
 		items:4,
 		loop:false,
+		//center: true,
 		margin:30,
 		autoplay:true,
 		autoplayTimeout:4000,

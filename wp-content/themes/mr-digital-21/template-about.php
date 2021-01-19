@@ -124,7 +124,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <?php get_template_part( 'team', 'slider' ); ?> 
+            <?php get_template_part( 'parts/team', 'slider' ); ?> 
             
         </div>
     </section><!-- Team --> 

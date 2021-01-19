@@ -8,8 +8,8 @@ if($checkList->have_posts()): ?>
                 <figure class="d-flex align-items-center mb-3">
                     <?php echo get_the_post_thumbnail(get_the_id(), 'full'); ?>
                 </figure>
-                <h4><?php the_title(); ?></h4>
-                <p><?php echo substr(get_field('mrdchecklist_checklist_description'), 0, 60).'...'; ?></p>
+                <h4 class="mb-4"><?php the_title(); ?></h4>
+                <p><a href="<?php echo get_permalink(); ?>" class="btn btn-primary rounded"><?php echo __('Download Checklist'); ?></a></p>
             </div>
         </div>
     	<?php endwhile;?>

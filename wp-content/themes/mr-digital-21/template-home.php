@@ -171,7 +171,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <?php get_template_part( 'team', 'slider' ); ?> 
+            <?php get_template_part( 'parts/team', 'slider' ); ?> 
             
         </div>
     </section><!-- Team -->
@@ -257,7 +257,7 @@ get_header(); ?>
                     <?php }?>
                 </div>
             </div>
-            <?php get_template_part( 'checklist', 'slider' ); ?>
+            <?php get_template_part( 'parts/checklist', 'slider' ); ?>
         </div>
     </section><!-- Checklist -->
 

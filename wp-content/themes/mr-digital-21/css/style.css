@@ -935,6 +935,7 @@ section.strategy{
 	border-bottom: 1px solid rgba(219, 219, 219, 1);
 }
 .checklist-slider .item figure img{
+	max-height: 300px;
 	margin: 0 auto;
 }
 .checklist-slider .owl-stage-outer{

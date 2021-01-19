@@ -54,7 +54,9 @@
                                 </figure>
                                 <div class="text-center mt-3">
                                     <h4><?php echo $team->post_title; ?></h4>
-                                    <p class="mb-0"><?php echo esc_attr( $category->name ); ?></p>
+                                    <p class="mb-0">
+                                        <?php echo get_field('designation', $team->ID); ?>
+                                    </p>
                                 </div>
                             </div><?php
                         }
