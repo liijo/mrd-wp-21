@@ -45,3 +45,4 @@ if($blog->have_posts()):
 	endwhile;
 	?></div><?php
 endif;
+wp_reset_query();

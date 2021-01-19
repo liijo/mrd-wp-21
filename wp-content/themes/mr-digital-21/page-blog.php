@@ -5,7 +5,13 @@ get_header(); ?>
 	<section class="section-podcast">
         <div class="container">
             <div class="text-center">
-                <h3 class="section-title mb-5 pb-3"><?php echo __('Podcast videos'); ?></h3>
+                <?php $section = get_field('podcast_video_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
             <?php get_template_part( 'parts/podcast-video', 'slider' ); ?>
             <div class="mt-5 text-center">
@@ -17,7 +23,13 @@ get_header(); ?>
     <section class="checklist pt-5 pb-5 grey">
         <div class="container">
         	<div class="text-center">
-                <h3 class="section-title mb-3 mt-5"><?php echo __('Checklists'); ?></h3>
+                <?php $section = get_field('checklists_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
             <div class="mb-5 pb-4">
             	<?php get_template_part( 'checklist', 'slider' ); ?>
@@ -28,7 +40,13 @@ get_header(); ?>
     <section class="events pt-5 pb-5 mt-5 mb-5">
     	<div class="container">
         	<div class="text-center">
-                <h3 class="section-title mb-5 pt-3"><?php echo __('Events & Event Recordings'); ?></h3>
+                <?php $section = get_field('events_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
             <div class="pt-4 mb-5">
             	<?php get_template_part( 'parts/events', 'slider' ); ?>
@@ -45,7 +63,13 @@ get_header(); ?>
     <section class="ultimate-guides pt-4 mt-5 mb-5">
     	<div class="container">
         	<div class="text-center">
-                <h3 class="section-title mb-5 pt-3"><?php echo __('Ultimate Guides Blogs'); ?></h3>
+                <?php $section = get_field('ultimate_guides_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
         </div>
         <div class="mrd-blogs">
@@ -58,7 +82,13 @@ get_header(); ?>
     <section class="section-podcast grey mt-5">
         <div class="container">
             <div class="text-center">
-                <h3 class="section-title mb-5 pb-3"><?php echo __('Podcast Audios'); ?></h3>
+                <?php $section = get_field('podcast_audio_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
             <?php get_template_part( 'parts/podcast-audio', 'slider' ); ?>
             <div class="mt-5 text-center">
@@ -70,7 +100,13 @@ get_header(); ?>
     <section class="blog-grid pt-4 mt-5 mb-5">
     	<div class="container">
         	<div class="text-center">
-                <h3 class="section-title mb-5 pt-3"><?php echo __('Other Blog Articles'); ?></h3>
+                <?php $section = get_field('blog_section');
+                if($section['title']){?>
+                <h3 class="section-title mb-2"><?php echo $section['title']; ?></h3>
+                <?php }
+                if($section['subtitle']){?>
+                <p class="mb-5 pb-3"><?php echo $section['subtitle']; ?></p>
+                <?php } ?>
             </div>
 	        <div class="mrd-blogs">
 	        	<?php get_template_part('parts/blog', 'grid'); ?>

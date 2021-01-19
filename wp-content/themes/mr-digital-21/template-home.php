@@ -62,7 +62,7 @@ get_header(); ?>
         </div>
     </section><!-- Dev-stages -->
 
-    <?php get_template_part( 'template-result', 'count' ); ?>
+    <?php get_template_part( 'parts/result', 'count' ); ?>
 
     <section class="case-studies pt-5 mt-5">
         <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
