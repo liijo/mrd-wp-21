@@ -367,6 +367,7 @@ h1, h2, h3{
 }
 .banner-slider{
 	height: 90%;
+	position: relative;
 }
 .banner-slider .slider-item{
 	width: 100%;
@@ -679,6 +680,9 @@ h1, h2, h3{
 }
 .counter-wrap .counter:before {
     content: attr(data-prefix);
+}
+.counter-wrap .counter:after {
+    content: attr(data-postfix);
 }
 .counter-wrap .counter-caption p{
 	font-size: 17px;

@@ -17,7 +17,7 @@ $banner = (get_field('background_image')) ? get_field('background_image') : get_
                             <h3 class="h1 mb-5"><?php echo get_sub_field('title'); ?></h3>
                         <?php }?>
                         <?php if(get_sub_field('content')){?>
-                        <p class="text-white"><?php echo get_sub_field('content'); ?></p>
+                        <p class="text-white mb-5"><?php echo get_sub_field('content'); ?></p>
                         <?php }?>
                         <?php if(get_sub_field('button_text')){
                             $url = (get_sub_field('button_url')) ? get_sub_field('button_url') : '#'; ?>

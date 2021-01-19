@@ -29,7 +29,7 @@
                } ?></p>
                <h3><?php the_title(); ?></h3>
                <p><?php echo mrd_get_the_excerpt(110, get_the_id()); ?></p>
-               <a href="<?php echo get_permalink(); ?>"><?php echo __('LEARN MORE'); ?></a>
+               <a href="<?php echo get_permalink(); ?>"><?php echo __('Read Case Study'); ?></a>
            </div>
        <?php endwhile;?>
    </div>
