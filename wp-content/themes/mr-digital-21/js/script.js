@@ -123,7 +123,7 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	$('.dev-slider, .events-slider').owlCarousel({
+	$('.dev-slider').owlCarousel({
 		loop: true,
 		nav: false,
 		dots: true,
@@ -133,11 +133,20 @@ jQuery(document).ready(function($){
 		autoplayHoverPause:true,
 	});
 
-	$('.testim-slider').owlCarousel({
+	$('.events-slider').owlCarousel({
 		loop: true,
 		nav: false,
 		dots: true,
 		autoplay: true,
+		items: 1,
+		autoplayHoverPause:true,
+	});
+
+	$('.testim-slider').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		autoplay: false,
 		items: 1,
 		autoplayHoverPause:true,
 	});
@@ -208,7 +217,7 @@ jQuery(document).ready(function($){
 	$('.team-slider').owlCarousel({
 		dots: false,
 		items:4,
-		loop:true,
+		loop:false,
 		margin:30,
 		autoplay:true,
 		autoplayTimeout:4000,
