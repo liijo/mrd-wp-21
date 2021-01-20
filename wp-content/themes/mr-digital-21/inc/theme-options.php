@@ -16,7 +16,9 @@ function mrdigital_customize_register( $wp_customize ) {
 		'result_count',
 		'strategy_session',
 		'deliver_results',
-		'case_studies'
+		'case_studies',
+		'footer_left',
+		'footer_right'
 	);
 	foreach ($settingsArr as $tSettings){
 		$wp_customize->add_setting( $tSettings , 
@@ -119,6 +121,30 @@ function mrdigital_customize_register( $wp_customize ) {
 	            'section'        => 'general',
 	            'settings'       => 'case_studies',
 	            'type'           => 'text',
+			) 
+		) 
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 
+			'footer_left', 
+			array(
+		    	'label'          => __( 'Footer left content', 'theme_name' ),
+	            'section'        => 'general',
+	            'settings'       => 'footer_left',
+	            'type'           => 'textarea',
+			) 
+		) 
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Control( 
+			$wp_customize, 
+			'footer_right', 
+			array(
+		    	'label'          => __( 'Footer right content', 'theme_name' ),
+	            'section'        => 'general',
+	            'settings'       => 'footer_right',
+	            'type'           => 'textarea',
 			) 
 		) 
 	);

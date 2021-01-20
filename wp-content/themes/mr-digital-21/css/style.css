@@ -178,6 +178,9 @@ h1, h2, h3{
 .blog-header-logo{
 	text-decoration: none;
 }
+.blog-header-logo svg{
+	max-width: 100%;
+}
 .blog-header-logo p{
 	color: #fff;
 	font-size: 10px;

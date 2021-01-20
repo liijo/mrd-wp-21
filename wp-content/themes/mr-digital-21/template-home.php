@@ -195,7 +195,7 @@ get_header(); ?>
                         <?php } ?>
                     </div>
                     <?php if( have_rows('logos') ): ?>
-                    <div class="row align-items-center">
+                    <div class="row align-items-center justify-content-center">
                         <?php while( have_rows('logos') ) : the_row(); ?>
                         <div class="col-lg-3 col-md-3">
                             <div class="text-center mb-4">
