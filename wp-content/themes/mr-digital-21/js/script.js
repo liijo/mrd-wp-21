@@ -329,12 +329,16 @@ jQuery(document).ready(function($){
 	}
 
 	if(document.getElementById('csModal') > 0){
-	var myModalEl = document.getElementById('csModal');
-	myModalEl.addEventListener('hidden.bs.modal', function (event) {
-		document.getElementById('exampleModalLabel').innerHTML = '';
-		document.getElementById('modal-body').innerHTML = '';
+		var myModalEl = document.getElementById('csModal');
+		myModalEl.addEventListener('hidden.bs.modal', function (event) {
+			document.getElementById('exampleModalLabel').innerHTML = '';
+			document.getElementById('modal-body').innerHTML = '';
+		});
+
+	}
+	$('#csModal .btn-close').click(function(){
+		$('#exampleModalLabel, #modal-body').html('');
 	});
-}
 
 });
 

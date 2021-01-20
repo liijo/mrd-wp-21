@@ -2,7 +2,7 @@
 /*
   Template Name: Projects Page
  */
-  get_header('inner');
+  get_header();
 ?>
     <section class="si-case-studies">
         <div class="container">
