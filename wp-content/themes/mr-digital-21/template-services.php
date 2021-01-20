@@ -21,7 +21,14 @@ get_header(); ?>
         </section><!-- .blurb -->
     <?php endif;?>
 
-    <?php $args = array( 'post_type' => 'services', 'showposts' => 10 );
+    <?php //$args = array( 'post_type' => 'services', 'showposts' => 10 );
+    $args = array(
+        'post_type'      => 'page',
+        'posts_per_page' => -1,
+        'post_parent'    => $post->ID,
+        'order'          => 'ASC',
+        'orderby'        => 'menu_order'
+    );
     $services = new WP_Query($args);
     $i = 0;
     if($services->have_posts()): ?>
