@@ -18,8 +18,8 @@
            <h1 class="blog-main-title"><?php the_title(); ?></h1>
            <div class="blog-author">
             <div class="d-flex align-items-center author-details">
-             <div class="author-image"><?php $meta = esc_attr( get_the_author_meta( 'author_image', $user->ID ) );
-             if ($meta) { $image = wp_get_attachment_image_src($meta, 'thumbnail');	$image = $image[0]; } ?>
+             <div class="author-image">
+              <?php $image = get_field( 'profile_picture', 'user_'.$post->post_author ) ; ?>
              <img src="<?php echo $image; ?>" alt="<?php the_author(); ?>"></div>
              <div class="author-data text-left"><strong class="text-uppercase"><?php the_author(); ?> / </strong><span><?php echo get_the_date(); ?></span></div>
            </div>
