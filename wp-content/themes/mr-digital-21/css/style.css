@@ -85,7 +85,7 @@ h1, h2, h3{
     margin: 7px 0;
 }
 .navbar-toggler-icon.short{
-	width: 24px;
+	width: 20px;
 	transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -129,9 +129,9 @@ h1, h2, h3{
     display: block;
 }
 .navbar-toggler:hover .navbar-toggler-icon.short{
-	transform: translateX(6px);
-	-o-transform: translateX(6px);
-	-webkit-transform: translateX(6px);
+	transform: translateX(10px);
+	-o-transform: translateX(10px);
+	-webkit-transform: translateX(10px);
 }
 .navbar-collapse .navbar-toggler-icon {
 	background-color: #000;
@@ -1707,4 +1707,82 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 	text-transform: uppercase;
 	font-family: "Avenir Next Extra Bold";
 	font-size: 21px;
+}
+
+#csModal .modal-body div,
+#csModal .modal-body img{
+	width: 100%;
+}
+#csModal .modal-body h3 {
+    margin-top: 10px;
+}
+
+@media (max-width: 575px){
+	header .row > div:first-child{
+		order: 3;
+	}
+	header .row > div:last-child{
+		order: 1;
+		justify-content: flex-start !important;
+	}
+	header .row > div:nth-child(2n){
+		order: 2;
+	}
+	#top-bar .container{
+		max-width: inherit;
+	}
+	.navbar-toggler{
+		float: right;
+	}
+	.d-xs-none{
+		display: none !important;
+	}
+	#top-bar .quick-contact{
+		padding-top: 10px;
+	}
+	#top-bar .quick-contact .btn{
+		border: 0 !important;
+		padding: 0;
+		font-size: 24px;
+	}
+	.banner-slider .h1{
+		font-size: 24px;
+	}
+	.blurb {
+	    margin-bottom: 26px;
+	}
+	.featured{
+		margin-bottom: 48px;
+	}
+	.owl-carousel .owl-nav{
+		top: 35%;
+	}
+	.owl-carousel .owl-nav button.owl-next, 
+	.owl-carousel .owl-nav button.owl-prev{
+		width: 30px;
+		height: 30px;
+		background-color: #fff;
+		border-radius: 50%;
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		font-size: 15px;
+	}
+	.owl-carousel .owl-nav .owl-prev {
+	    left: -7px;
+	}
+	.owl-carousel .owl-nav .owl-next {
+	    right: -7px;
+	}
+	.counter-wrap .counter{
+		font-size: 36px;
+	}
+	.section-title{
+		font-size: 29px;
+		line-height: 40px;
+	}
+}
+@media print{
+	body * { visibility: hidden; }
+	#modal-body img {display: none;}
+	#modal-body * { visibility: visible; }
+	#modal-body { position: absolute; top: 40px; left: 30px; }
 }

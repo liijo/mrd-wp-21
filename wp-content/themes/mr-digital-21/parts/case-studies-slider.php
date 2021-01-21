@@ -40,7 +40,7 @@
                 <div class="modal-header border-0">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <div>
-                        <button type="button" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1"><span class="icon-printer pe-2"></span> Print</button>
+                        <button type="button" onclick="window.print()" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1"><span class="icon-printer pe-2"></span> Print</button>
                         <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>

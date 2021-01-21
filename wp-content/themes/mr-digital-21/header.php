@@ -63,10 +63,10 @@
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="col-md-4 col-3 d-flex justify-content-end align-items-center">
+                    <div class="col-md-4 col-3 d-flex justify-content-end align-items-top">
                         <div class="quick-contact">
                             <a href="tel:01483920998" class="btn btn-outline-secondary btn-white border-end-0"><span class="icon-phone pe-2"></span><span class="d-none d-sm-inline"> <?php echo get_theme_mod('header_phone'); ?></span></a>
-                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
+                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary d-xs-none"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
                         </div>
                     </div>
                 </div>

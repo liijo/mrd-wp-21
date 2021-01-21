@@ -9,8 +9,8 @@ get_header(); ?>
         <section class="blurb">
             <div class="container">
                 <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
                         <?php echo get_field('blurb'); ?>
                     </div>
                 </div>
@@ -50,12 +50,12 @@ get_header(); ?>
                 <div class="item" data-dot="<button role='button' class='owl-dot'><span><?php echo $i; ?></span></button>">
                     <?php $i++; ?>
                     <div class="row align-items-center">
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <div class="text-end item-wrap">
                                 <img src="<?php echo get_sub_field('image'); ?>" alt="stage" />
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <div class="item-wrap">
                                 <?php echo get_sub_field('content'); ?>
                             </div>

@@ -8,7 +8,7 @@
         <?php if( have_rows('result', $resultId) ): ?>
         <div class="row">
             <?php while( have_rows('result', $resultId) ) : the_row(); ?>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-sm-6 col-6">
                 <div class="counter-wrap text-center">
                     <div class="counter-bg">
                         <img src="<?php echo get_sub_field('image'); ?>" alt="google" />
