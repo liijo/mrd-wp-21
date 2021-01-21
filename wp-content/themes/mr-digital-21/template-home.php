@@ -71,7 +71,7 @@ get_header(); ?>
     <?php get_template_part( 'parts/result', 'count' ); ?>
 
     <section class="case-studies pt-5 mt-5">
-        <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
+        <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
     <section class="testimonial pt-5 mt-5">

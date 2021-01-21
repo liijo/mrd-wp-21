@@ -22,8 +22,8 @@ if($podcast->have_posts()): ?>
 				<a class="btn btn-play" href="<?php echo get_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/podcast-play.svg" alt="icon"></a>
 			</div>
 			<div class="card-body">
-				<h6 class="card-min-title text-center"><?php the_title(); ?></h6>
-				<<!-- h4 class="card-title"><?php //the_content(); ?></h4> -->
+				<h6 class="card-min-title"><?php the_title(); ?></h6>
+				<!-- h4 class="card-title"><?php //the_content(); ?></h4> -->
 			</div>
 		</div>
 	</div>

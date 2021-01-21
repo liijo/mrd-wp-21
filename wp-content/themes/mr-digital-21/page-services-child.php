@@ -63,7 +63,7 @@ get_header(); ?>
     </section>
 
     <section class="case-studies pt-5 mt-5 border-0">
-        <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
+        <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
     <?php $args = array( 'post_type' => 'testimonials', 'showposts' => 3 );
