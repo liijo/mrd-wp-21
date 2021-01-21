@@ -1,6 +1,6 @@
 <?php 
 $id = get_the_id(); 
-if( is_singular('post') || basename(get_page_template()) == 'page-projects.php' ) return;
+if( is_singular('post') || basename(get_page_template()) == 'page-projects.php' || is_post_type_archive('works') ) return;
 $disable = get_field('disable_banner');
 if(empty($disable)){
 $banner = (get_field('background_image')) ? get_field('background_image') : get_bloginfo('template_directory') . '/images/banner.jpg';

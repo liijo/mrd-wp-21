@@ -1405,7 +1405,6 @@ section.strategy{
 .blog-meta-frame {
 	margin-top: -80px;
 	position  : relative;
-	z-index   : 10;
 }
 
 .blog-meta {
