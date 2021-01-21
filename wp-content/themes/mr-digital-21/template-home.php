@@ -23,18 +23,24 @@ get_header(); ?>
     <section class="dev-stages">
         <div class="container">
             <div class="text-center mb-5">
-                <?php $devStage = get_field('development_stages');
-                if( ! empty ($devStage['dev_section_title']) ){?>
-                <h3 class="section-title mb-3">
-                    <?php echo $devStage['dev_section_title'];?>
-                </h3>
-                <?php }
-                if( ! empty ($devStage['dev_section_subtitle']) ){?>
-                <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
-                <?php } 
-                if( ! empty ($devStage['dev_section_content']) ){?>
-                <p class="small"><?php echo $devStage['dev_section_content'];?></p>
-                <?php } ?>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <?php $devStage = get_field('development_stages');
+                        if( ! empty ($devStage['dev_section_title']) ){?>
+                        <h3 class="section-title mb-3">
+                            <?php echo $devStage['dev_section_title'];?>
+                        </h3>
+                        <?php }?>
+                        <?php
+                        if( ! empty ($devStage['dev_section_subtitle']) ){?>
+                        <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
+                        <?php } 
+                        if( ! empty ($devStage['dev_section_content']) ){?>
+                        <p class="small"><?php echo $devStage['dev_section_content'];?></p>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
             <div class="clearfix"></div>
             <?php if( have_rows('development_stage_slider') ): ?>

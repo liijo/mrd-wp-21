@@ -56,14 +56,14 @@
             <?php endif;?>
             <?php echo do_shortcode('[ajax_load_more archive="true" offset="6" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
             <div class="text-center"><span class="loader-3 text-danger"></span></div>            
-            <div class="row">
+            <?php /*<div class="row">
                 <div class="col-12 text-center mt-3 mt-md-5">
                     <a href="#" class="cs-view-all-links" id="load-more" data-ptype="works"><?php echo __('Load more Posts'); ?></a>
                     <input type="hidden" name="offset" value="6" />
                     <?php $postCount = wp_count_posts('works'); ?>
                     <input type="hidden" name="total-posts" value="<?php echo $postCount->publish; ?>" />
                 </div>
-            </div>
+            </div>*/?>
         </div>
     </section>
 
