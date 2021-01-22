@@ -314,6 +314,12 @@ h1, h2, h3{
     line-height: 26px;
     color: #000000;
 }
+.modal-header{
+	padding: 2rem 2rem 0;
+}
+.modal-body {
+	padding: 2rem;
+}
 
 .quick-contact .btn{
 	text-transform: uppercase;
@@ -1784,7 +1790,8 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 	body * { visibility: hidden; }
 	#modal-body img {display: none;}
 	#modal-body * { visibility: visible; }
-	#modal-body { position: absolute; top: 40px; left: 30px; }
+	#modal-body { position: fixed; top: 10px; left: 20px; }
+	#modal-body p{ font-size: 11px; }
 }
 
 @media (min-width: 768px){
@@ -1803,4 +1810,7 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 #contactForm form input[type=submit]{
 	padding-top: 9px;
 	padding-bottom: 9px;
+}
+#contactForm  .wpcf7-list-item-label {
+    font-size: 16px;
 }

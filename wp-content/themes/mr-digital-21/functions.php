@@ -105,8 +105,9 @@ function getPopupContent(){
 	$next_post = get_adjacent_post( true, '', false, '' );
 	$image = '';
 	if(get_field('image', $_POST['postId']))
-		$image = '<img src="' . get_field('image', $_POST['postId']) . '" alt="" class="rounded shadow mb-4" />';
-	$image .= '<div class="text-start">' . get_the_content('', '', $_POST['postId']) . '</div>';
+		$image = '<img src="' . get_field('image', $_POST['postId']) . '" alt="" class="d-print-none rounded shadow mb-4" />';
+	$image .= '<div class="text-start"><h3 class="d-print-block d-none">'.$title.'</h3>';
+	$image .= get_the_content('', '', $_POST['postId']) . '</div>';
 	$retArr = array(
 		'title'    => $title, 
 		'image'    => $image, 

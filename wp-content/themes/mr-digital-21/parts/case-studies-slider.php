@@ -33,7 +33,9 @@
            </div>
        <?php endwhile;?>
    </div>
-   
+   <script> 
+        
+    </script> 
 <?php endif;
 wp_reset_query();
 ?>

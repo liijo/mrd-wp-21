@@ -268,11 +268,11 @@ jQuery(document).ready(function($){
 	            $('#nextpost').data('id', response.nextpost);
 	        },
 	    });
-	    $('body > section, body > header, body > footer').addClass('d-print-none');
+	    //$('body > section, body > header, body > footer').hide();
 	});
 
 	$('.modal .btn-close').click(function(){
-		$('body > section, body > header, body > footer').removeClass('d-print-none');
+		//$('body > section, body > header, body > footer').show();
 	});
 
 	$('.btn-play').click(function(){
@@ -390,3 +390,14 @@ jQuery(window).scroll(function(){
 	}
 });
 
+function printDiv() { 
+    var divContents = document.getElementById("modal-body").innerHTML; 
+    var a = window.open('', 'Print-Window'); 
+    a.document.write('<html><head><title>Print DIV Content</title>'); 
+    a.document.write('<body>'); 
+    a.document.write(divContents); 
+    a.document.write('</body></html>'); 
+    a.document.close(); 
+    a.print(); 
+    setTimeout(function(){a.close();},10);
+}
