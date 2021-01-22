@@ -249,7 +249,7 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('overflow-hidden');
 	});
 
-	$('.launch-modal').click(function(){
+	$('body').on('click', '.launch-modal', function(){
 		var postId = $(this).data('id');
 		$('.loader-2').addClass('spinner-border');
 		$.ajax({
@@ -273,12 +273,8 @@ jQuery(document).ready(function($){
         	    }
 	        },
 	    });
-	    //$('body > section, body > header, body > footer').hide();
 	});
 
-	$('.modal .btn-close').click(function(){
-		//$('body > section, body > header, body > footer').show();
-	});
 
 	$('.btn-play').click(function(){
 		var postId = $(this).data('id');
