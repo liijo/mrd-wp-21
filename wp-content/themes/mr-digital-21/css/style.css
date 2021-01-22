@@ -314,6 +314,12 @@ h1, h2, h3{
     line-height: 26px;
     color: #000000;
 }
+.modal-header{
+	padding: 2rem 2rem 0;
+}
+.modal-body {
+	padding: 2rem;
+}
 
 .quick-contact .btn{
 	text-transform: uppercase;
@@ -537,8 +543,20 @@ h1, h2, h3{
 .result-slider .item-content .btn-play:hover{
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
-#video iframe{
-	width: 100%;
+#video {
+    --video--width: 1296;
+    --video--height: 540;
+    position: relative;
+    padding-bottom: calc(var(--video--height) / var(--video--width) * 100%);
+    overflow: hidden;
+    max-width: 100%;
+}
+#video iframe, #video object, #video #player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width: 992px){
@@ -1288,8 +1306,8 @@ section.strategy{
 }
 .alm-btn-wrap .alm-load-more-btn {
     border: 0;
-    background: #E30613;
-    color: red;
+    background: transparent;
+    color: #E30613;
 }
 .alm-btn-wrap .alm-load-more-btn:after{
 	font-family: 'icomoon';
@@ -1471,7 +1489,6 @@ section.strategy{
 	right     : -130px;
 	top       : 0;
 	margin-top: -140px;
-	z-index   : 100;
 }
 
 .blog-social-frame .blog-social span,
@@ -1709,12 +1726,11 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 	font-size: 21px;
 }
 
-#csModal .modal-body div,
-#csModal .modal-body img{
+#csModal .modal-body div{
 	width: 100%;
 }
 #csModal .modal-body h3 {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 @media (max-width: 575px){
@@ -1784,5 +1800,36 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 	body * { visibility: hidden; }
 	#modal-body img {display: none;}
 	#modal-body * { visibility: visible; }
-	#modal-body { position: absolute; top: 40px; left: 30px; }
+	#modal-body { position: fixed; top: 10px; left: 20px; }
+	#modal-body p{ font-size: 11px; }
+}
+
+@media (min-width: 768px){
+	#contactForm form {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	}
+	#contactForm form > .form-group-line {
+	    width: 49%;
+	}
+	#contactForm form > .form-group-wide {
+	    width: 100%;
+	}
+}
+#contactForm form input[type=submit]{
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+.wpcf7-list-item-label {
+    font-size: 16px;
+}
+@media (min-width: 1024px){
+	.article-cs .article-media img{
+		height: 100%;
+    	object-fit: cover;
+	}
+	.article-cs .article-media{
+		height: 470px;
+	}
 }

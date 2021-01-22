@@ -54,14 +54,17 @@ if(empty($disable)){
     </section><!-- .main-slider end -->
 <?php }?>
 <div class="modal fade" id="contactForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 align-items-start">
+                <div class="section-heading">
+                    <?php echo get_field('banner_content'); ?>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <?php echo do_shortcode('[contact-form-7 id="5" title="Contact form 1"]'); ?>
+            </div>
+        </div>
     </div>
-    <div class="modal-body">
-        <?php echo do_shortcode('[contact-form-7 id="5" title="Contact form 1"]'); ?>
-    </div>
-</div>
-</div>
 </div>

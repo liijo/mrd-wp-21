@@ -249,7 +249,7 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('overflow-hidden');
 	});
 
-	$('.launch-modal').click(function(){
+	$('body').on('click', '.launch-modal', function(){
 		var postId = $(this).data('id');
 		$('.loader-2').addClass('spinner-border');
 		$.ajax({
@@ -260,15 +260,21 @@ jQuery(document).ready(function($){
 	            'postId' : postId
 	        },
 	        success: function( response ) {
-	        	console.log(response);
 	            $('#exampleModalLabel').html(response.title);
 	            $('#modal-body').html(response.image);
 	            $('.loader-2').removeClass('spinner-border');
 	            $('#prevpost').data('id', response.prevpost);
 	            $('#nextpost').data('id', response.nextpost);
+	            if(response.file == null)
+	            	$('#download-file').hide();
+	            else{
+	            	$('#download-file').show();
+	            	$('#download-file').attr('href', response.file);
+        	    }
 	        },
 	    });
 	});
+
 
 	$('.btn-play').click(function(){
 		var postId = $(this).data('id');
@@ -385,3 +391,14 @@ jQuery(window).scroll(function(){
 	}
 });
 
+function printDiv() { 
+    var divContents = document.getElementById("modal-body").innerHTML; 
+    var a = window.open('', 'Print-Window'); 
+    a.document.write('<html><head><title>Print Case Study</title>'); 
+    a.document.write('<body>'); 
+    a.document.write(divContents); 
+    a.document.write('</body></html>'); 
+    a.document.close(); 
+    a.print(); 
+    setTimeout(function(){a.close();},10);
+}

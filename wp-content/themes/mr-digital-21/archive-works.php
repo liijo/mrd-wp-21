@@ -53,6 +53,8 @@
                 </div>
                 <?php endwhile;?>
             </div>
+            <?php else:?>
+                <p><?php echo __('Nothing found.') ?></p>
             <?php endif;?>
             <?php echo do_shortcode('[ajax_load_more archive="true" offset="6" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
             <div class="text-center"><span class="loader-3 text-danger"></span></div>            
@@ -70,29 +72,6 @@
     <section class="strategy-session mt-5 grey">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="csModal" tabindex="-1" aria-labelledby="csModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <div>
-                        <button type="button" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1"><span class="icon-printer pe-2"></span> Print</button>
-                        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                </div>
-                <div class="modal-body text-center">
-                    <span class="loader-2 text-danger"></span>
-                    <div id="modal-body"></div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="modal-nav">
-            <button class="btn btn-prev" id="prevpost"><span class="icon-left-arrow"></span></button>
-            <button class="btn btn-next" id="nextpost"><span class="icon-next-arrow"></span></button>
-        </div> -->
-    </div>
 
 </div>
 

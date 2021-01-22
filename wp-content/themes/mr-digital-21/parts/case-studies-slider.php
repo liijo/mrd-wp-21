@@ -33,29 +33,6 @@
            </div>
        <?php endwhile;?>
    </div>
-   <!-- Modal -->
-    <div class="modal fade" id="csModal" tabindex="-1" aria-labelledby="csModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <div>
-
-                        <button type="button" onclick="window.print()" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1"><span class="icon-printer pe-2"></span> Print</button>
-                        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                </div>
-                <div class="modal-body text-center">
-                    <span class="loader-2 text-danger"></span>
-                    <div id="modal-body"></div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="modal-nav">
-            <button class="btn btn-prev" id="prevpost"><span class="icon-left-arrow"></span></button>
-            <button class="btn btn-next" id="nextpost"><span class="icon-next-arrow"></span></button>
-        </div> -->
-    </div>
 <?php endif;
 wp_reset_query();
 ?>

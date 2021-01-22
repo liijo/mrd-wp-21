@@ -18,7 +18,7 @@ get_header(); ?>
         </section><!-- .blurb -->
     <?php endif;?>
 
-    <?php get_template_part( 'template-testimonial', 'slider' ); ?>   
+    <?php get_template_part( 'parts/testimonial', 'slider' ); ?>   
 
     <section class="dev-stages">
         <div class="container">
