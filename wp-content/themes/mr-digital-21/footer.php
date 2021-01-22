@@ -52,10 +52,12 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="modal-nav">
-            <button class="btn btn-prev" id="prevpost"><span class="icon-left-arrow"></span></button>
-            <button class="btn btn-next" id="nextpost"><span class="icon-next-arrow"></span></button>
-        </div> -->
+        <div class="modal-nav">
+            <button class="btn btn-prev get_adjacent" id="prevpost"><span class="icon-left-arrow"></span></button>
+            <button class="btn btn-next get_adjacent" id="nextpost"><span class="icon-next-arrow"></span></button>
+            <input type="hidden" name="prev_post" value=""/>
+            <input type="hidden" name="next_post" value=""/>
+        </div>
     </div>
     <?php wp_footer(); ?>
     </body>

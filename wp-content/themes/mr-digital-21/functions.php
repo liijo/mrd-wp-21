@@ -101,8 +101,8 @@ add_action('wp_ajax_nopriv_get_popup_content', 'getPopupContent');
 add_action('wp_ajax_get_popup_content', 'getPopupContent');
 function getPopupContent(){
 	$title = get_the_title($_POST['postId']);
-	$prev_post = get_adjacent_post( true, '', true, '' );
-	$next_post = get_adjacent_post( true, '', false, '' );
+	$prev_post = mrd_get_previous_post($_POST['postId']);
+	$next_post = mrd_get_next_post( $_POST['postId'] );
 	$image = '';
 	if(get_field('image', $_POST['postId']))
 		$image = '<img src="' . get_field('image', $_POST['postId']) . '" alt="" class="d-print-none rounded shadow mb-4" />';
@@ -112,8 +112,8 @@ function getPopupContent(){
 	$retArr = array(
 		'title'    => $title, 
 		'image'    => $image, 
-		'prevpost' => $prev_post->ID, 
-		'nextpost' => $next_post->ID,
+		'prevpost' => $prev_post, 
+		'nextpost' => $next_post,
 		'file'	   => $file
 	);
 	wp_send_json($retArr);
@@ -134,3 +134,30 @@ function getPopupContentVideo(){
 	die;
 }
 
+function mrd_get_previous_post($post_id){
+	global $wpdb;
+	$prev_id = null;
+	$postType = get_post_type($post_id);
+	$sql = 'SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_type = "'.$postType.'"';
+	$results = $wpdb->get_col( $wpdb->prepare($sql));
+	foreach($results as $key => $id){
+		$prev = $results[$key-1];
+		if($id == $post_id)
+    		$prev_id = $prev;
+	}
+	return $prev_id;
+}
+
+function mrd_get_next_post($post_id){
+	global $wpdb;
+	$next_id = null;
+	$postType = get_post_type($post_id);
+	$sql = 'SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_type = "'.$postType.'"';
+	$results = $wpdb->get_col( $wpdb->prepare($sql));
+	foreach($results as $key => $id){
+		$next = $results[$key+1];
+		if($id == $post_id)
+    		$next_id = $next;
+	}
+	return $next_id;
+}

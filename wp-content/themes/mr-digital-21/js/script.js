@@ -249,8 +249,10 @@ jQuery(document).ready(function($){
 		$('body').toggleClass('overflow-hidden');
 	});
 
-	$('body').on('click', '.launch-modal', function(){
+	$('body').on('click', '.launch-modal, .get_adjacent', function(){
 		var postId = $(this).data('id');
+		console.log($('input[name=prev_post]').val());
+		console.log($('input[name=next_post]').val());
 		$('.loader-2').addClass('spinner-border');
 		$.ajax({
 	        url: frontend_ajax_object.ajaxurl,
@@ -263,8 +265,10 @@ jQuery(document).ready(function($){
 	            $('#exampleModalLabel').html(response.title);
 	            $('#modal-body').html(response.image);
 	            $('.loader-2').removeClass('spinner-border');
-	            $('#prevpost').data('id', response.prevpost);
-	            $('#nextpost').data('id', response.nextpost);
+	            $('#prevpost').attr('data-id', response.prevpost);
+	            $('input[name=prev_post]').val(response.prevpost);
+	            $('#nextpost').attr('data-id', response.nextpost);
+	            $('input[name=next_post]').val(response.nextpost);
 	            if(response.file == null)
 	            	$('#download-file').hide();
 	            else{
