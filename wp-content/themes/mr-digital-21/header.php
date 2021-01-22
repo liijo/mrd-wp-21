@@ -21,7 +21,7 @@
 </head>
    <body <?php body_class(); ?>>
       <?php $disable = get_field('disable_banner', get_the_id()); ?>
-      <header <?php if(!empty($disable) || is_singular('post') || basename(get_page_template()) == 'page-projects.php') echo 'class="short-header"'; ?>>
+      <header <?php if(is_post_type_archive('works') || !empty($disable) || is_singular('post') || basename(get_page_template()) == 'page-projects.php') echo 'class="short-header"'; ?>>
 
         <div class="position-absolute top-0 start-0 end-0 z-index-9 pt-4" id="top-bar">
             <div class="container">
@@ -63,10 +63,10 @@
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="col-md-4 col-3 d-flex justify-content-end align-items-center">
+                    <div class="col-md-4 col-3 d-flex justify-content-end align-items-top">
                         <div class="quick-contact">
                             <a href="tel:01483920998" class="btn btn-outline-secondary btn-white border-end-0"><span class="icon-phone pe-2"></span><span class="d-none d-sm-inline"> <?php echo get_theme_mod('header_phone'); ?></span></a>
-                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
+                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary d-xs-none"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
                         </div>
                     </div>
                 </div>

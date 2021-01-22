@@ -227,7 +227,7 @@ function create_post_type(){
     unset( $args );
     unset( $labels );
 
-    register_post_type('services', array(
+    /*register_post_type('services', array(
         'labels' => array(
             'name'          => __('Services', 'gopustheme'),
             'singular_name' => __('Services', 'gopustheme'),
@@ -244,7 +244,7 @@ function create_post_type(){
         'hierarchical'      => false,
         'rewrite'           => array('slug' => 'our-services'),
         )
-    );
+    );*/
 
     register_taxonomy(
         'bad_tag', 

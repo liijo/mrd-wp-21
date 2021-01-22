@@ -150,7 +150,7 @@ get_header(); ?>
                     echo $podcast['section_content'];
                 }?>
             </div>
-            <?php get_template_part( 'parts/podcast-audio', 'slider' ); ?>             
+            <?php get_template_part( 'parts/podcast-video', 'slider' ); ?>             
         </div>
     </section><!-- .section-podcast -->
 

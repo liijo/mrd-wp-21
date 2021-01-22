@@ -9,8 +9,8 @@ get_header(); ?>
         <section class="blurb">
             <div class="container">
                 <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
                         <?php echo get_field('blurb'); ?>
                     </div>
                 </div>
@@ -23,18 +23,24 @@ get_header(); ?>
     <section class="dev-stages">
         <div class="container">
             <div class="text-center mb-5">
-                <?php $devStage = get_field('development_stages');
-                if( ! empty ($devStage['dev_section_title']) ){?>
-                <h3 class="section-title mb-3">
-                    <?php echo $devStage['dev_section_title'];?>
-                </h3>
-                <?php }
-                if( ! empty ($devStage['dev_section_subtitle']) ){?>
-                <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
-                <?php } 
-                if( ! empty ($devStage['dev_section_content']) ){?>
-                <p class="small"><?php echo $devStage['dev_section_content'];?></p>
-                <?php } ?>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <?php $devStage = get_field('development_stages');
+                        if( ! empty ($devStage['dev_section_title']) ){?>
+                        <h3 class="section-title mb-3">
+                            <?php echo $devStage['dev_section_title'];?>
+                        </h3>
+                        <?php }?>
+                        <?php
+                        if( ! empty ($devStage['dev_section_subtitle']) ){?>
+                        <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
+                        <?php } 
+                        if( ! empty ($devStage['dev_section_content']) ){?>
+                        <p class="small"><?php echo $devStage['dev_section_content'];?></p>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
             <div class="clearfix"></div>
             <?php if( have_rows('development_stage_slider') ): ?>
@@ -44,12 +50,12 @@ get_header(); ?>
                 <div class="item" data-dot="<button role='button' class='owl-dot'><span><?php echo $i; ?></span></button>">
                     <?php $i++; ?>
                     <div class="row align-items-center">
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <div class="text-end item-wrap">
                                 <img src="<?php echo get_sub_field('image'); ?>" alt="stage" />
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <div class="item-wrap">
                                 <?php echo get_sub_field('content'); ?>
                             </div>
@@ -65,7 +71,7 @@ get_header(); ?>
     <?php get_template_part( 'parts/result', 'count' ); ?>
 
     <section class="case-studies pt-5 mt-5">
-        <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
+        <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
     <section class="testimonial pt-5 mt-5">

@@ -402,17 +402,9 @@
     top: 10px;
     left: 10px;
 }
-.podcast-card .card-media .card-min-title {
-    font-size: 18px;
-    font-weight: 400;
-    color: #FFFFFF;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    margin-bottom: 0;
-    padding: 0 15px;
+.podcast-card .card-min-title {
+    font-size: 20px;
+    font-weight: 600;
 }
 .podcast-card .card-media .btn-play {
     position: absolute;

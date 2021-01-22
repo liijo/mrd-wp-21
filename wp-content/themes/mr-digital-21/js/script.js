@@ -51,15 +51,12 @@ jQuery(document).ready(function($){
 				items:2
 			},
 			768:{
-				nav: false,
 				items:2
 			},
 			575:{
-				nav: false,
 				items:1
 			},
 			0:{
-				nav: false,
 				items:1
 			}
 		}
@@ -173,10 +170,12 @@ jQuery(document).ready(function($){
 				items:2
 			},
 			575:{
+				stagePadding: 0,
 				nav: false,
 				items:1
 			},
 			0:{
+				stagePadding: 0,
 				nav: false,
 				items:1
 			}

@@ -63,7 +63,7 @@ get_header(); ?>
     </section>
 
     <section class="case-studies pt-5 mt-5 border-0">
-        <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
+        <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
     <?php $args = array( 'post_type' => 'testimonials', 'showposts' => 3 );
@@ -73,7 +73,7 @@ get_header(); ?>
         <div class="container">
             <?php if( ! empty (get_field('testimonial_section_title') ) ) {?>
             <div class="mb-md-5">
-                <h3 class="section-title mb-3"><?php echo get_field('testimonial_section_title') ?></h3>
+                <h3 class="section-title mb-3 text-center"><?php echo get_field('testimonial_section_title') ?></h3>
             </div>
             <?php }?>
             <div class="testimonials mb-5">
@@ -141,7 +141,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="mb-5">
-                        <h3 class="mb-3 fw-bolder h1"><?php echo __('FAQ'); ?></h3>
+                        <h3 class="mb-3 fw-bolder h1 text-center"><?php echo __('FAQ'); ?></h3>
                     </div>
                     <?php if( have_rows('faq') ): ?>
                     <?php $i = 1; ?>
