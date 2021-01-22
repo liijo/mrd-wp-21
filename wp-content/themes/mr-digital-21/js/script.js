@@ -192,7 +192,7 @@ jQuery(document).ready(function($){
 
 	$('.team-slider').owlCarousel({
 		dots: false,
-		items:4,
+		items: 3,
 		loop:true,
 		margin:30,
 		autoplay:true,
@@ -207,15 +207,16 @@ jQuery(document).ready(function($){
 			},
 			768:{
 				nav: false,
-				items:2
+				items:3
 			},
 			575:{
 				nav: false,
-				items:1
+				items:3
 			},
 			0:{
 				nav: false,
-				items:1
+				items:3,
+				margin: 20,
 			}
 		}
 	});

@@ -821,7 +821,6 @@
 # AUTHOR: EDWIN
 # DESCRBITION: MOBILE RESPONSIVE
 =================== */
-
 @media (max-width: 767px) {
     body {
         font-size: 16px;
@@ -843,24 +842,21 @@
         padding-left: 16px;
         padding-right: 16px;
     }
-
-
-    header {
-        display: none;
-    }
 }
-
-
 
 /* =====[ELEMENTS]===== */
 @media (max-width: 767px) {
-    .section-title-panel .section-title {
+    .section-title-panel .section-title,
+    .section-title {
         font-size: 30px;
         line-height: 1.3;
     }
-    .section-title-panel p { font-size: 18px; }
+    .section-title-panel p,
+    .section-title + p {
+        font-size: 18px; 
+        line-height: 1.6;
+    }
 }
-
 
 /* =====[HEADER]===== */
 @media (max-width: 767px) {
@@ -868,13 +864,23 @@
         font-size: 8px;
         line-height: 1;
     }
+    header .row > div:first-child { order: 1!important; }
+    header .navbar-toggler { float: none!important; }
+    header .row > div:last-child {
+        order: 3!important;
+        justify-content: center!important;
+    }
+    #banner { height: 680px; }
 }
-
 
 /* =====[MENU]===== */
 @media (max-width: 767px) {
     .navbar-collapse { padding: 110px 20px 40px 20px; }
-    .navbar-collapse .circle { z-index: -1;}
+    .navbar-collapse .circle { 
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: -1;
+    }
     .navbar-collapse .navbar-nav {
         position: relative;
         z-index: 100;
@@ -886,7 +892,6 @@
         line-height: 1;
     }
 }
-
 
 /* =====[SECTION HOME BLURB]===== */
 @media (max-width: 767px) {
@@ -900,7 +905,6 @@
     }
     .section-home-blurb .btn-primary { margin-top: 20px; }
 }
-
 
 /* =====[SECTION HOME BLURB]===== */
 @media (max-width: 767px) {
@@ -916,7 +920,6 @@
         margin-top: 4px;
     }
 }
-
 
 /* =====[DEV STAGES]===== */
 @media (max-width: 767px) {
@@ -948,7 +951,6 @@
     }
 }
 
-
 /* =====[RESULT]===== */
 @media (max-width: 767px) {
     .results { padding: 70px 0 60px 0; }
@@ -970,7 +972,6 @@
     }
 }
 
-
 /* =====[CASE STUDIES]===== */
 @media (max-width: 767px) {
     .section-home-case-studies {
@@ -986,7 +987,6 @@
     }
     .section-home-case-studies .cs-slider p { line-height: 1.8; }
 }
-
 
 /* =====[TESTIMONIAL]===== */
 @media (max-width: 767px) {
@@ -1007,7 +1007,6 @@
     .section-home-testimonial .testim-slider.owl-carousel .owl-dots::before { top: 7px; }
 }
 
-
 /* =====[STRATEGY]===== */
 @media (max-width: 767px) {
     .section-home-strategy {
@@ -1023,6 +1022,46 @@
     .section-home-strategy .text-center.pt-5 { padding-top: 1.6rem!important; }
 }
 
+/* =====[TEAM]===== */
+@media (max-width: 767px) {
+    .team {
+        padding: 70px 0 75px 0!important;
+        margin: 0!important;
+    }
+    .team .section-title-panel {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    .team .section-title-panel p { line-height: 1.6; }
+    .team .nav-pills { padding: 8px; }
+    .team .nav-pills .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .team .nav-pills .nav-item:last-child { border-bottom: 0; }
+    .team .nav-pills .nav-item .nav-link {
+        padding: 9px 12px;
+        line-height: 1.3;
+        font-size: 15px;
+    }
+    .team .team-slider .item.pt-5 {
+        padding-top: 1.8rem!important;
+        padding-bottom: 5px!important;
+    }
+    .team .team-slider figure {
+        padding: 4px;
+        width: 80px;
+        height: 80px;
+    }
+    .team .team-slider h4 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    .team .team-slider p {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+}
 
 /* =====[CLIENTS]===== */
 @media (max-width: 767px) {
@@ -1033,7 +1072,6 @@
     .section-clients .section-title-panel .section-title { line-height: 1.2; }
     .section-clients .section-title-panel p { line-height: 1.6; }
 }
-
 
 /* =====[PURPOSE]===== */
 @media (max-width: 767px) {
@@ -1054,7 +1092,6 @@
     .section-purpose .btn-primary { margin-top: 22px; }
 }
 
-
 /* =====[CHECKLIST]===== */
 @media (max-width: 767px) {
     .section-checklist {
@@ -1073,7 +1110,6 @@
     }
 }
 
-
 /* =====[STRATEGY]===== */
 @media (max-width: 767px) {
     .section-strategy-session {
@@ -1088,7 +1124,6 @@
     .section-strategy-session .text-center.pt-5 { padding-top: 1.8rem !important; }
 }
 
-
 /* =====[BOTTOM LOGOS]===== */
 @media (max-width: 767px) {
     .bottom-logos .row {
@@ -1101,7 +1136,6 @@
         padding-right: 10px;
     }
 }
-
 
 /* =====[LEAD GENERATION]===== */
 @media (max-width: 767px) {
@@ -1135,7 +1169,7 @@
         text-align: center;
     }
     section.overflow-hidden.hentry .section-title {
-        font-size: 26px;
+        font-size: 24px;
         line-height: 1.35;
         margin-bottom: 14px;
     }
@@ -1170,4 +1204,15 @@
         width: 160px; 
         margin-top: 16px;
     }
+}
+
+/* =====[SERVICE MIN PAGE]===== */
+@media (max-width: 767px) {
+    .service-testim-slider .item { margin: 0 0 30px 0!important; }
+    .service-testim-slider .content h3 {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 24px
+    }
+    .service-testim-slider .content footer figure { margin-bottom: 0; }
 }
