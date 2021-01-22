@@ -1786,3 +1786,21 @@ section.watwedo_lists.alternate.boxed.single_case_study.single_blog.with_navs {
 	#modal-body * { visibility: visible; }
 	#modal-body { position: absolute; top: 40px; left: 30px; }
 }
+
+@media (min-width: 768px){
+	#contactForm form {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	}
+	#contactForm form > .form-group-line {
+	    width: 49%;
+	}
+	#contactForm form > .form-group-wide {
+	    width: 100%;
+	}
+}
+#contactForm form input[type=submit]{
+	padding-top: 9px;
+	padding-bottom: 9px;
+}

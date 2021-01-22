@@ -268,6 +268,11 @@ jQuery(document).ready(function($){
 	            $('#nextpost').data('id', response.nextpost);
 	        },
 	    });
+	    $('body > section, body > header, body > footer').addClass('d-print-none');
+	});
+
+	$('.modal .btn-close').click(function(){
+		$('body > section, body > header, body > footer').removeClass('d-print-none');
 	});
 
 	$('.btn-play').click(function(){
