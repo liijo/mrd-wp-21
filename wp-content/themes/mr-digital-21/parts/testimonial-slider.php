@@ -53,12 +53,12 @@
             </div>
             <!-- Modal -->
             <div class="modal fade" id="video-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header border-0">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                  <div class="modal-body">
+                  <div class="modal-body text-center">
                     <span class="loader-2 text-danger"></span>
                     <div id="video" class="text-center">
                     </div>

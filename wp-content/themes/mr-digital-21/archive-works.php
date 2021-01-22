@@ -53,6 +53,8 @@
                 </div>
                 <?php endwhile;?>
             </div>
+            <?php else:?>
+                <p><?php echo __('Nothing found.') ?></p>
             <?php endif;?>
             <?php echo do_shortcode('[ajax_load_more archive="true" offset="6" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
             <div class="text-center"><span class="loader-3 text-danger"></span></div>            

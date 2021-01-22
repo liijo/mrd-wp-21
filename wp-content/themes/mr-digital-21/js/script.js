@@ -260,12 +260,17 @@ jQuery(document).ready(function($){
 	            'postId' : postId
 	        },
 	        success: function( response ) {
-	        	console.log(response);
 	            $('#exampleModalLabel').html(response.title);
 	            $('#modal-body').html(response.image);
 	            $('.loader-2').removeClass('spinner-border');
 	            $('#prevpost').data('id', response.prevpost);
 	            $('#nextpost').data('id', response.nextpost);
+	            if(response.file == null)
+	            	$('#download-file').hide();
+	            else{
+	            	$('#download-file').show();
+	            	$('#download-file').attr('href', response.file);
+        	    }
 	        },
 	    });
 	    //$('body > section, body > header, body > footer').hide();
@@ -393,7 +398,7 @@ jQuery(window).scroll(function(){
 function printDiv() { 
     var divContents = document.getElementById("modal-body").innerHTML; 
     var a = window.open('', 'Print-Window'); 
-    a.document.write('<html><head><title>Print DIV Content</title>'); 
+    a.document.write('<html><head><title>Print Case Study</title>'); 
     a.document.write('<body>'); 
     a.document.write(divContents); 
     a.document.write('</body></html>'); 

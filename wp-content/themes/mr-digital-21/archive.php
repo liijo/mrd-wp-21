@@ -11,13 +11,19 @@
                         'taxonomy' => $taxonomy,
                         'hide_empty' => false
                     ) );
+                    
+                    if(is_tax()) 
+                        $termId = get_queried_object();
 
                     if ( !empty($department) ) :
+                        $selected = '';
                         ?><div class="cs-dropdown-main">
                         <select name="work_category" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                             <option selected value="">All Case Studies</option><?php
                             foreach( $department as $category ) {
-                            ?><option value="<?php echo get_term_link($category); ?>">
+                                if($termId->term_id > 0 && $termId->term_id == $category->term_id) 
+                                    $selected = 'selected="selected"';
+                            ?><option value="<?php echo get_term_link($category); ?>" <?php echo $selected; ?>>
                                 <?php echo esc_attr( $category->name ); ?>
                             </option><?php
                             }

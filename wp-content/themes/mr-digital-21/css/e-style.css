@@ -403,7 +403,7 @@
     left: 10px;
 }
 .podcast-card .card-min-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 .podcast-card .card-media .btn-play {
@@ -484,7 +484,6 @@
     font-weight: 600;
     margin: 20px 0 25px 0;
     line-height: 1.5;
-    min-height: 72px;
 }
 .article-cs .article-body p {
     font-size: 20px;

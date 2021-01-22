@@ -16,7 +16,7 @@
         </div>
     </section><!-- .blurb -->
 
-    <?php get_template_part( 'template-testimonial', 'slider' ); ?>
+    <?php get_template_part( 'parts/testimonial', 'slider' ); ?>
 
     <section class="process mb-5 mt-5 pt-5">
         <div class="container">
