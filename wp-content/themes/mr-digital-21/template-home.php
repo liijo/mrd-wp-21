@@ -62,11 +62,11 @@ get_header(); ?>
 
     <?php get_template_part( 'template-result', 'count' ); ?>
 
-    <section class="case-studies pt-5 mt-5">
+    <section class="section-home-case-studies case-studies pt-5 mt-5">
         <?php get_template_part( 'templatepart-case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
-    <section class="testimonial pt-5 mt-5">
+    <section class="section-home-testimonial testimonial pt-5 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -138,7 +138,7 @@ get_header(); ?>
         </div>
     </section><!-- Testimonials -->
 
-    <section class="strategy grey">
+    <section class="section-home-strategy strategy grey">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -174,11 +174,11 @@ get_header(); ?>
         </div>
     </section><!-- Team -->
 
-    <section class="clients mt-5 pt-5">
+    <section class="section-clients clients mt-5 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <div class="text-center mb-5">
+                    <div class="section-title-panel text-center mb-5">
                         <?php $clients = get_field('clients');
                         if( ! empty ($clients['section_title']) ){?>
                         <h3 class="section-title mb-3">
@@ -193,9 +193,9 @@ get_header(); ?>
                         <?php } ?>
                     </div>
                     <?php if( have_rows('logos') ): ?>
-                    <div class="row align-items-center">
+                    <div class="row align-items-center row-clients">
                         <?php while( have_rows('logos') ) : the_row(); ?>
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-3 col-md-3 col-4">
                             <div class="text-center mb-4">
                                 <img src="<?php echo get_sub_field('image'); ?>">
                             </div>
@@ -211,7 +211,7 @@ get_header(); ?>
     <?php $purpose = get_field('purpose');
     if(!empty($purpose)) {
     $background = ($purpose['background']) ? $purpose['background'] : ''; ?>
-    <section class="purpose mt-5 pt-5" style="background-image: url(<?php echo $background; ?>);">
+    <section class="section-purpose purpose mt-5 pt-5" style="background-image: url(<?php echo $background; ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -234,7 +234,7 @@ get_header(); ?>
     </section><!-- purpose -->
     <?php } ?>
 
-    <section class="checklist mt-5 pt-5 pb-4">
+    <section class="section-checklist checklist mt-5 pt-5 pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -259,7 +259,7 @@ get_header(); ?>
         </div>
     </section><!-- Checklist -->
 
-    <section class="strategy-session mt-5 grey">
+    <section class="section-strategy-session strategy-session mt-5 grey">
         <?php get_template_part( 'template-strategy', 'session' ); ?> 
     </section>
 
