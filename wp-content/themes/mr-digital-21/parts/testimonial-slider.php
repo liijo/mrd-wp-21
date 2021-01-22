@@ -1,7 +1,7 @@
 <?php $deliverResults = get_theme_mod('deliver_results'); ?>
     <section class="result-oriented grey">
         <div class="container">
-            <div class="text-center">
+            <div class="section-title-panel text-center">
                 <?php $title = get_field('section_title', $deliverResults); 
                 $subtitle = get_field('section_subtitle', $deliverResults); 
                 if( ! empty ($title) ){?>
@@ -24,14 +24,12 @@
                             <?php if( ! empty (get_field('thumbnail') ) ){
                                 $thumbnail = get_field('thumbnail');
                                 ?><img src="<?php echo $thumbnail['sizes']['video_testimonial_t']; ?>" alt=" " /><?php
-                            }  
-                            if(! empty(get_field('thumbnail')) ){?>
+                            }  ?>
                             <div class="play-button">
-                                <a href="#" class="btn-play" data-bs-toggle="modal" data-bs-target="#video-popup" data-id="<?php the_id(); ?>">
+                                <a href="#" class="btn-play">
                                     <span class="icon-play-button-arrowhead"></span>
                                 </a>
                             </div>
-                            <?php } ?>
                         </div>
                         <div class="item-footer">
                             <figure class="d-flex align-items-center">
