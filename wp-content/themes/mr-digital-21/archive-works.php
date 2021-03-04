@@ -41,9 +41,11 @@
                         <div class="article-body">
                             <?php $ptype = wp_get_post_terms(get_the_id(), 'work_category', array("fields" => "all")); ?>
                             <?php if($ptype){
+                                echo '<div class="tags">';
                                 foreach ($ptype as $postType) {
                                     echo '<span class="article-tag text-uppercase">'.$postType->name.'</span>';
                                 }
+                                echo '</div>';
                             } ?>
                             <h4 class="article-title"><?php the_title(); ?></h4>
                             <p><?php echo mrd_get_the_excerpt(120, get_the_id()).'...'; ?></p>
@@ -56,7 +58,7 @@
             <?php else:?>
                 <p><?php echo __('Nothing found.') ?></p>
             <?php endif;?>
-            <?php echo do_shortcode('[ajax_load_more archive="true" offset="6" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
+            <?php echo do_shortcode('[ajax_load_more archive="true" offset="10" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
             <div class="text-center"><span class="loader-3 text-danger"></span></div>            
             <?php /*<div class="row">
                 <div class="col-12 text-center mt-3 mt-md-5">

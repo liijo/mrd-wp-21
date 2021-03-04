@@ -63,9 +63,12 @@ get_header('inner');
     </div>
 </section>
 
+<?php if( ! empty (get_field('session_title', get_the_id())) ): ?>
 <section class="strategy-session mt-5 grey border-bottom border-2">
     <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
 </section>
+<?php endif; ?>
+<div class="clearfix border-2 border-bottom"></div>
 
 <?php endif; ?>
 <?php get_footer(); ?>

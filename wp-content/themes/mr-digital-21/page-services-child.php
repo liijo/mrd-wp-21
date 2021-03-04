@@ -11,7 +11,7 @@ get_header(); ?>
                 <div class="col-10">
                     <?php the_content(); ?>
                     <div class="clearfix">
-                        <a href="#" class="btn btn-primary rounded"><?php echo __('GET A FREE ZOOM STRATEGY SESSION'); ?> <span class="icon-right"></span></a>
+                        <?php /*<a href="#" class="btn btn-primary rounded"><?php echo (get_field('blurb_button_label')) ? get_field('blurb_button_label') : __('GET A FREE ZOOM STRATEGY SESSION'); ?> <span class="icon-right"></span></a>*/?>
                     </div>
                 </div>
             </div>
@@ -58,18 +58,23 @@ get_header(); ?>
         </div>
     </section><!-- process -->
 
+    <?php /*if( ! empty (get_field('session_title', get_the_id())) ): ?>
     <section class="strategy-session mt-5 grey">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
+    <?php endif; */ ?>
 
     <section class="case-studies pt-5 mt-5 border-0">
         <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
-    <?php $args = array( 'post_type' => 'testimonials', 'showposts' => 3 );
+    <?php $args = array( 'post_type' => 'testimonials', 'showposts' => 4 );
+    $testimIds = get_field('select_text_testimonials');
+    if(!empty($testimIds))
+      $args = array( 'post_type' => 'testimonials', 'post__in' => $testimIds );
     $testimonyQuery = new WP_Query($args);
     if($testimonyQuery->have_posts()): ?>
-    <section class="testimonial grey pt-5 mt-5">
+    <section class="testimonial grey mt-md-5">
         <div class="container">
             <?php if( ! empty (get_field('testimonial_section_title') ) ) {?>
             <div class="mb-md-5">
@@ -107,20 +112,20 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <?php endwhile;?>
+                    <?php endwhile; ?>
                 </div>
 
             </div>
-            <div class="text-center pt-2">
+            <?php /*<div class="text-center pt-2">
                 <a href="<?php echo get_permalink(5100) ?>"><strong><?php echo __('VIEW ALL TESTIMONIALS'); ?></strong> <span class="icon-arrow-down"></span></a>
-            </div>
+            </div>*/?>
         </div>
     </section><!-- Testimonials -->
     <?php endif; wp_reset_query(); ?>
 
     <?php $stratSection = get_field('strategy_section');?>
     <?php if( ! empty ($stratSection) ){?>
-    <section class="strategy mt-5 pt-5 mb-5">
+    <section class="strategy mt-5 pt-5 mb-5 test">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -141,7 +146,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="mb-5">
-                        <h3 class="mb-3 fw-bolder h1 text-center"><?php echo __('FAQ'); ?></h3>
+                        <h3 class="mb-3 fw-bolder h1 text-center"><?php echo __('FAQs'); ?></h3>
                     </div>
                     <?php if( have_rows('faq') ): ?>
                     <?php $i = 1; ?>
@@ -149,7 +154,7 @@ get_header(); ?>
                         <?php while( have_rows('faq') ) : the_row(); ?>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                <button class="accordion-button <?php if($i > 1) echo 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
                                     <?php echo get_sub_field('add_question'); ?>
                                 </button>
                             </h2>
@@ -168,9 +173,12 @@ get_header(); ?>
         </div>
     </section>
 
-    <section class="strategy-session mt-5 border-bottom border-2 pb-5">
+    <?php if( ! empty (get_field('session_title', get_the_id())) ): ?>
+    <section class="strategy-session pt-5 mt-md-5 border-bottom border-2 pb-5">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
+        <div class="clearfix pt-md-5"></div>
     </section><!-- strategy-session -->
+    <?php endif; ?>
 
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>

@@ -71,6 +71,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/mrd-check-list-question-group-me
 require plugin_dir_path( __FILE__ ) . 'includes/mrd-check-list-checklist-meta.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-checklist-mrdigital-shortcodes.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-checklist-mrdigital-ajax.php';
+require plugin_dir_path( __FILE__ ) . 'includes/calculator_functions.php';
+require plugin_dir_path( __FILE__ ) . 'includes/packagemanager.php';
+require plugin_dir_path( __FILE__ ) . 'includes/landingpage_functions.php';
+require plugin_dir_path( __FILE__ ) . 'includes/thirdparty_apis.php';
+require plugin_dir_path( __FILE__ ) . 'includes/partner_program_functions.php';
 
 
 /**

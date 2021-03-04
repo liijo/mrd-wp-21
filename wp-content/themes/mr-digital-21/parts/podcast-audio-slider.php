@@ -19,7 +19,9 @@ if($podcast->have_posts()): ?>
 			<div class="card-media">
 				<span class="badge rounded-pill"><?php echo __('EPISODE ') . get_field('episode_number'); ?></span>
 				<?php echo get_the_post_thumbnail(get_the_id(), 'podcast_t'); ?>
-				<a class="btn btn-play" href="<?php echo get_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/podcast-play.svg" alt="icon"></a>
+				<?php if(get_field('podcast_url')) : ?>
+				<a class="btn btn-play" href="<?php echo get_field('podcast_url'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/podcast-play.svg" alt="icon"></a>
+				<?php endif;?>
 			</div>
 			<div class="card-body">
 				<h6 class="card-min-title"><?php the_title(); ?></h6>

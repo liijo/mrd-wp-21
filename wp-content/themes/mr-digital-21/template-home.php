@@ -6,11 +6,11 @@ get_header(); ?>
 
 <?php if (have_posts()) : the_post(); ?>
     <?php if(get_field('blurb')) :?>
-        <section class="blurb">
+        <section class="section-home section-home-blurb blurb">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
+                    <div class="col-1"></div>
+                    <div class="col-10">
                         <?php echo get_field('blurb'); ?>
                     </div>
                 </div>
@@ -20,42 +20,36 @@ get_header(); ?>
 
     <?php get_template_part( 'parts/testimonial', 'slider' ); ?>   
 
-    <section class="dev-stages">
+    <section class="section-home section-home-dev-stages dev-stages">
         <div class="container">
-            <div class="text-center mb-5">
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="col-10">
-                        <?php $devStage = get_field('development_stages');
-                        if( ! empty ($devStage['dev_section_title']) ){?>
-                        <h3 class="section-title mb-3">
-                            <?php echo $devStage['dev_section_title'];?>
-                        </h3>
-                        <?php }?>
-                        <?php
-                        if( ! empty ($devStage['dev_section_subtitle']) ){?>
-                        <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
-                        <?php } 
-                        if( ! empty ($devStage['dev_section_content']) ){?>
-                        <p class="small"><?php echo $devStage['dev_section_content'];?></p>
-                        <?php } ?>
-                    </div>
-                </div>
+            <div class="section-title-panel text-center mb-5">
+                <?php $devStage = get_field('development_stages');
+                if( ! empty ($devStage['dev_section_title']) ){?>
+                <h3 class="section-title mb-3">
+                    <?php echo $devStage['dev_section_title'];?>
+                </h3>
+                <?php }
+                if( ! empty ($devStage['dev_section_subtitle']) ){?>
+                <p class="mb-4"><?php echo $devStage['dev_section_subtitle'];?></p>
+                <?php } 
+                if( ! empty ($devStage['dev_section_content']) ){?>
+                <p class="small"><?php echo $devStage['dev_section_content'];?></p>
+                <?php } ?>
             </div>
             <div class="clearfix"></div>
             <?php if( have_rows('development_stage_slider') ): ?>
+            <?php $i = 1; ?>
             <div class="dev-slider owl-carousel mt-5">
-                <?php $i = 1; ?>
                 <?php while( have_rows('development_stage_slider') ) : the_row(); ?>
                 <div class="item" data-dot="<button role='button' class='owl-dot'><span><?php echo $i; ?></span></button>">
                     <?php $i++; ?>
                     <div class="row align-items-center">
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="text-end item-wrap">
-                                <img src="<?php echo get_sub_field('image'); ?>" alt="stage" />
+                                <img src="<?php echo get_sub_field('image'); ?>" alt="stage" class="rounded" />
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="item-wrap">
                                 <?php echo get_sub_field('content'); ?>
                             </div>
@@ -70,15 +64,15 @@ get_header(); ?>
 
     <?php get_template_part( 'parts/result', 'count' ); ?>
 
-    <section class="case-studies pt-5 mt-5">
+    <section class="section-home-case-studies case-studies pt-5 mt-5">
         <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
     </section> <!-- case studies -->
 
-    <section class="testimonial pt-5 mt-5">
+    <section class="section-home-testimonial testimonial pt-5 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <div class="text-center mb-5">
+                <div class="col-md-9 mx-auto">
+                    <div class="section-title-panel text-center mb-5">
                         <?php $testimonials = get_field('testimonials');
                         if( ! empty ($testimonials['section_title']) ){?>
                         <h3 class="section-title mb-3">
@@ -103,7 +97,7 @@ get_header(); ?>
                 </span>
 
                 <div class="row">
-                    <div class="col-md-8 offset-md-2">
+                    <div class="col-md-9 mx-auto">
                         <?php $args = array( 'post_type' => 'testimonials', 'showposts' => 6 );
                         $testimonials = new WP_Query($args);
                         if($testimonials->have_posts()): ?>
@@ -126,7 +120,7 @@ get_header(); ?>
                                     <figure>
                                         <?php $logo = get_field('logo');
                                         if(!empty($logo)) {?>
-                                        <img src="<?php echo $logo['sizes']['testimonial_logo']; ?>" alt="" />
+                                        <img src="<?php echo $logo; ?>" alt="" />
                                         <?php }?>
                                     </figure>
                                 </div>
@@ -146,20 +140,20 @@ get_header(); ?>
         </div>
     </section><!-- Testimonials -->
 
-    <section class="strategy grey">
+    <section class="section-home-strategy strategy grey">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-9 mx-auto">
                     <?php echo get_field('strategy'); ?>
                 </div>
             </div>
         </div>
     </section><!-- Strategy -->
 
-    <section class="team pt-5 mt-5">
+    <section class="team pt-5 mt-5 border-bottom border-2">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-9 mx-auto">
                     <div class="text-center mb-5">
                         <?php $team = get_field('team');
                         if( ! empty ($team['section_title']) ){?>
@@ -182,11 +176,11 @@ get_header(); ?>
         </div>
     </section><!-- Team -->
 
-    <section class="clients mt-5 pt-5">
+    <section class="section-clients clients mt-5 pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <div class="text-center mb-5">
+                <div class="col-md-9 mx-auto">
+                    <div class="section-title-panel text-center mb-5">
                         <?php $clients = get_field('clients');
                         if( ! empty ($clients['section_title']) ){?>
                         <h3 class="section-title mb-3">
@@ -200,15 +194,16 @@ get_header(); ?>
                         <p class="mb-5"><?php echo $clients['section_content'] ?></p>
                         <?php } ?>
                     </div>
-                    <?php if( have_rows('logos') ): ?>
-                    <div class="row align-items-center justify-content-center">
+                    <?php if( have_rows('logos') ): 
+                        $i = 1;?>
+                    <div class="d-flex flex-wrap align-items-center row-clients justify-content-around align-items-stretch">
                         <?php while( have_rows('logos') ) : the_row(); ?>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="text-center mb-4">
+                        <div class="col-lg-3 col-md-3 col-6 py-0">
+                            <div class="justify-content-center pb-4 pt-4 c-border <?php echo 'c-border-'.$i;?> d-flex align-items-center">
                                 <img src="<?php echo get_sub_field('image'); ?>">
                             </div>
                         </div>
-                        <?php endwhile;?>
+                        <?php $i++; endwhile;?>
                     </div>
                     <?php endif;?>
                 </div>
@@ -219,10 +214,10 @@ get_header(); ?>
     <?php $purpose = get_field('purpose');
     if(!empty($purpose)) {
     $background = ($purpose['background']) ? $purpose['background'] : ''; ?>
-    <section class="purpose mt-5 pt-5" style="background-image: url(<?php echo $background; ?>);">
+    <section class="section-purpose purpose mt-5 pt-5" style="background-image: url(<?php echo $background; ?>);">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-9 mx-auto">
                     <div class="text-center position-relative mb-5 pb-5">
                         <?php if( ! empty ($purpose['section_title']) ){?>
                         <h3 class="section-title mb-3">
@@ -232,9 +227,9 @@ get_header(); ?>
                         if( ! empty ($purpose['section_subtitle']) ){?>
                         <p class="small"><?php echo $purpose['section_subtitle'];?></p>
                         <?php } ?>
-                        <?php if( ! empty ($purpose['section_content']) ){?>
-                        <p class="mb-5"><?php echo $purpose['section_content'] ?></p>
-                        <?php } ?>
+                        <?php if( ! empty ($purpose['section_content']) ){
+                            echo $purpose['section_content'];
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -242,13 +237,13 @@ get_header(); ?>
     </section><!-- purpose -->
     <?php } ?>
 
-    <section class="checklist mt-5 pt-5 pb-4">
+    <section class="section-checklist checklist mt-5 pt-5 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-9 mx-auto">
                     <?php $checklist = get_field('checklist');
                     if(!empty($checklist)) {?>
-                    <div class="text-center position-relative mb-5">
+                    <div class="text-center position-relative">
                         <?php if( ! empty ($checklist['section_title']) ){?>
                         <h3 class="section-title mb-3">
                             <?php echo $checklist['section_title'];?>
@@ -267,7 +262,7 @@ get_header(); ?>
         </div>
     </section><!-- Checklist -->
 
-    <section class="strategy-session mt-5 grey">
+    <section class="section-strategy-session strategy-session mt-5 grey">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
 

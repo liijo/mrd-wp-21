@@ -1,0 +1,636 @@
+/* Scss Document */
+/*================================================
+## Elements
+================================================*/
+/*-- container style --*/
+.package-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .package-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .package-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .package-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .package-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .package-container {
+    max-width: 1330px;
+  }
+}
+
+.package-section {
+  background: #F4F7F6;
+}
+
+.package-container .row {
+  margin: 0;
+  align-items: self-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.marketing_caculator_wrapper {
+  padding-bottom: 100px;
+  /*-- Custom form / inputs / buttons --*/
+  /*page styles*/
+  /*-- Horizontal ranger --*/
+  /*-- Special list styles --*/
+  /*-- Special button group styles --*/
+  /*-- aside widget --*/
+  /*Result page*/
+  /*Media queries*/
+}
+
+.marketing_caculator_wrapper .btn-primary-red,
+.marketing_caculator_wrapper .btn-primary-grey {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 0;
+}
+
+.marketing_caculator_wrapper .btn-primary-red {
+  background: #E30613;
+  color: #FFFFFF;
+}
+
+.marketing_caculator_wrapper .btn-primary-grey {
+  background: #DEDEDE;
+  color: #000000;
+}
+
+.marketing_caculator_wrapper .btn-primary-red:hover {
+  color: #FFFFFF;
+}
+
+.marketing_caculator_wrapper .btn-primary-grey:hover {
+  color: #000000;
+}
+
+.marketing_caculator_wrapper .button-panel {
+  margin-top: 60px;
+}
+
+.marketing_caculator_wrapper .form-control {
+  background: #FAFAFA;
+  border: 1px solid #eac6c6;
+  padding: 0.6rem 0.75rem;
+  font-size: 16px;
+}
+
+.marketing_caculator_wrapper .form-control:focus {
+  border: 1px solid #E8E8E8;
+}
+
+.marketing_caculator_wrapper .form-control::-webkit-input-placeholder {
+  color: #646464;
+}
+
+.marketing_caculator_wrapper .form-control::-moz-placeholder {
+  color: #646464;
+}
+
+.marketing_caculator_wrapper .form-control:-ms-input-placeholder {
+  color: #646464;
+}
+
+.marketing_caculator_wrapper .form-control:-moz-placeholder {
+  color: #646464;
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+  border-color: #007bff;
+  background-color: #007bff;
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.marketing_caculator_wrapper .custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.marketing_caculator_wrapper .custom-control-inline {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 1rem;
+}
+
+.marketing_caculator_wrapper .custom-control-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.marketing_caculator_wrapper .custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #E30613;
+  background-color: #E30613;
+  box-shadow: 1px 1px 0px #00000029;
+}
+
+.marketing_caculator_wrapper .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #80bdff;
+}
+
+.marketing_caculator_wrapper .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.marketing_caculator_wrapper .custom-control-input:disabled ~ .custom-control-label {
+  color: #6c757d;
+}
+
+.marketing_caculator_wrapper .custom-control-input:disabled ~ .custom-control-label::before {
+  background-color: #e9ecef;
+}
+
+.marketing_caculator_wrapper .custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+}
+
+.marketing_caculator_wrapper .custom-control-label::before {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: #adb5bd solid 1px;
+  box-shadow: 1px 1px 0px #00000029;
+}
+
+.marketing_caculator_wrapper .custom-control-label::after {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background: no-repeat 50% / 50% 50%;
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-label::before {
+  border-radius: 2px;
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+  border-color: #007bff;
+  background-color: #007bff;
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='%23fff' d='M0 2h4'/%3e%3c/svg%3e");
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.marketing_caculator_wrapper .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.marketing_caculator_wrapper .custom-radio .custom-control-label::before {
+  border-radius: 50%;
+}
+
+.marketing_caculator_wrapper .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.marketing_caculator_wrapper .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 123, 255, 0.5);
+}
+
+.marketing_caculator_wrapper .package-panel {
+  display: none;
+}
+
+.marketing_caculator_wrapper .package-panel.active {
+  display: block;
+}
+
+.marketing_caculator_wrapper .package-inner-panel {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 50px 44px 30px 44px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+}
+
+.marketing_caculator_wrapper .package-inner-panel .pip-inner {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.marketing_caculator_wrapper .package-heading {
+  margin-bottom: 30px;
+}
+
+.marketing_caculator_wrapper .package-heading h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #E30613;
+}
+
+.marketing_caculator_wrapper .package-timeline-panel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.marketing_caculator_wrapper .package-timeline-panel label {
+  color: #707070;
+}
+
+.marketing_caculator_wrapper .package-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.marketing_caculator_wrapper .package-timeline li {
+  width: calc(100% / 8);
+  position: relative;
+  text-align: right;
+}
+
+.marketing_caculator_wrapper .package-timeline li:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: #EDEDED;
+}
+
+.marketing_caculator_wrapper .package-timeline li:first-child:before {
+  display: none;
+}
+
+.marketing_caculator_wrapper .package-timeline li span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ADADAD;
+  text-align: center;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  line-height: 27px;
+  border: 1px solid #EDEDED;
+  background: #FFFFFF;
+  position: relative;
+  z-index: 10;
+}
+
+.marketing_caculator_wrapper .package-timeline li.active:before {
+  background: #E30613;
+}
+
+.marketing_caculator_wrapper .package-timeline li.active span {
+  color: #FFFFFF;
+  background: #E30613;
+  border: 1px solid #E30613;
+}
+
+.marketing_caculator_wrapper .special-btn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marketing_caculator_wrapper .special-btn-list li {
+  margin-bottom: 20px;
+}
+
+.marketing_caculator_wrapper .special-btn-list li h5 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.marketing_caculator_wrapper .special-btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn {
+  min-width: 125px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  display: inline-flex;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #E30613;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F8F8;
+  border: 1px solid #E8E8E8;
+  width: 100%;
+  height: 90px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all .10s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn label span {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn label svg {
+  margin-bottom: 2px;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn label svg .a {
+  fill: #898989;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn input[type="radio"] {
+  display: none;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn input[type="radio"]:checked + label {
+  background: #FFF2F2;
+  color: #E30613;
+  border: 1px solid #E30613;
+}
+
+.marketing_caculator_wrapper .special-toggle-btn input[type="radio"]:checked + label svg .a {
+  fill: #E30613;
+}
+
+.marketing_caculator_wrapper .required {
+  display: none;
+}
+
+.marketing_caculator_wrapper .error + .required {
+  font-size: 14px;
+  text-align: left;
+  color: #E30613;
+  display: block;
+}
+
+.marketing_caculator_wrapper .form-control.error {
+  border-color: #E30613;
+}
+
+.marketing_caculator_wrapper #mrd_calc_alert2.marketing .loading_report {
+  height: 40px !important;
+  position: relative;
+  top: -72px;
+}
+
+.marketing_caculator_wrapper .popover {
+  border: 1px solid rgba(0, 0, 0, 0.85);
+}
+
+.marketing_caculator_wrapper .duration-widget {
+  width: 280px;
+  background: #FFFFFF url("../img/widget-background.svg") no-repeat;
+  background-position: right bottom;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.marketing_caculator_wrapper .duration-widget-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.marketing_caculator_wrapper .duration-widget-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 16px 0;
+  border-bottom: 1px solid #EAEAEA;
+  font-size: 16px;
+}
+
+.marketing_caculator_wrapper .duration-widget-list li p {
+  width: 65%;
+  margin-bottom: 0;
+  padding-right: 26px;
+}
+
+.marketing_caculator_wrapper .duration-widget-list li h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #E30613;
+  width: 35%;
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper .duration-widget-list li h5 small {
+  font-size: 14px;
+  padding-left: 3px;
+}
+
+.marketing_caculator_wrapper .duration-widget-footer {
+  padding: 30px 0;
+}
+
+.marketing_caculator_wrapper .duration-widget-footer h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper .duration-widget-footer h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #E30613;
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper .package-meta-panel {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.marketing_caculator_wrapper .package-meta-panel li {
+  width: 50%;
+  border-right: 1px dashed #C4C4C4;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.marketing_caculator_wrapper .package-meta-panel li:last-child {
+  border-right: 0;
+}
+
+.marketing_caculator_wrapper .package-meta-panel li img {
+  margin-bottom: 8px;
+}
+
+.marketing_caculator_wrapper .package-meta-panel li h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #E30613;
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper .package-meta-panel li p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper .package-box-shadow {
+  box-shadow: 0px 2px 6px #0000002B;
+  padding: 20px 15px;
+  border-radius: 8px;
+}
+
+.marketing_caculator_wrapper .package-box-shadow p {
+  margin-bottom: 0;
+}
+
+.marketing_caculator_wrapper [v-cloak] {
+  display: none;
+}
+
+.marketing_caculator_wrapper .a {
+  fill: #898989;
+}
+
+@media (max-width: 1359px) {
+  .marketing_caculator_wrapper .package-inner-panel {
+    max-width: 780px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .marketing_caculator_wrapper .package-inner-panel {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 991px) {
+  .marketing_caculator_wrapper .package-container .row {
+    flex-wrap: wrap;
+  }
+  .marketing_caculator_wrapper .duration-widget {
+    margin: 40px auto 0 auto;
+  }
+  .marketing_caculator_wrapper .package-inner-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .marketing_caculator_wrapper .button-panel {
+    margin-top: 40px;
+  }
+  .marketing_caculator_wrapper .package-inner-panel {
+    padding: 30px 20px 30px 20px;
+  }
+  .marketing_caculator_wrapper .package-timeline-panel label {
+    display: none;
+  }
+  .marketing_caculator_wrapper .package-timeline li:before {
+    height: 2px;
+    margin-top: 0;
+  }
+  .marketing_caculator_wrapper .package-timeline li span {
+    font-size: 12px;
+    width: 24px;
+    height: 24px;
+    line-height: 21px;
+  }
+  .marketing_caculator_wrapper .special-toggle-btn label {
+    height: 70px;
+  }
+  .marketing_caculator_wrapper .package-meta-panel li {
+    padding: 0 6px;
+  }
+  .marketing_caculator_wrapper .package-meta-panel li h2 {
+    font-size: 26px;
+  }
+  .marketing_caculator_wrapper .package-meta-panel li p {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=_marketingcaculator.css.map */

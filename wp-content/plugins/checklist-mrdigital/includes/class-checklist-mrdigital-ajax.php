@@ -364,8 +364,11 @@ class Checklist_Mrdigital_Ajax {
 
 
       <div class="cover-page">
-        <div class="first-header">
-          <img src="'. WPMRDC_PLUGIN_DIR .'/includes/img/mrdc_logo1.png" alt="" />
+        <div class="first-header">';
+        $imagedata1 = file_get_contents(WPMRDC_PLUGIN_DIR ."/includes/img/mrdc_logo1.png");
+             // alternatively specify an URL, if PHP settings allow
+        $base64_1 = base64_encode($imagedata1);
+      $html .='<img src="data:image/png;base64,'. $base64_1 .'" alt="" />
         </div>
         <div class="heading">
           <h2>'.get_the_title($mrd_checklist_id).'</h2>
@@ -408,10 +411,15 @@ class Checklist_Mrdigital_Ajax {
         </div>
       </div>
       <div class="SetAutoPageBreak"></div>';
+      $imagedata2 = file_get_contents(WPMRDC_PLUGIN_DIR ."/includes/img/brand-logo.png");
+           // alternatively specify an URL, if PHP settings allow
+      $base64_2 = base64_encode($imagedata2);
+
+
       $html .= '<div class="header">
         <table border="0" width="100%">
           <tr>
-            <td width="50%"><img src="'. WPMRDC_PLUGIN_DIR .'/includes/img/brand-logo.png" alt="" /></td>
+            <td width="50%"><img src="data:image/png;base64,'. $base64_2 .'" alt="" /></td>
             <td width="50%" align="right">'.date("j F, Y").'</td>
           </tr>
         </table>
@@ -419,7 +427,7 @@ class Checklist_Mrdigital_Ajax {
       <footer>
       <table border="0" width="100%">
         <tr>
-          <td width="50%"><img src="'. WPMRDC_PLUGIN_DIR .'/includes/img/brand-logo.png" alt="" /></td>
+          <td width="50%"><img src="data:image/png;base64,'. $base64_2 .'" alt="" /></td>
           <td width="50%" align="right"><span class="page">Page: </span></td>
         </tr>
       </table>
@@ -462,10 +470,13 @@ class Checklist_Mrdigital_Ajax {
                             $q_description = $question['q_description'];
                     $q_id = 'q_'.$q_group.'_'.$count;
                     if(in_array($q_id,$selectedQuestions)){
+                      $imagedata3 = file_get_contents(WPMRDC_PLUGIN_DIR ."/includes/img/green-check.svg");
+                           // alternatively specify an URL, if PHP settings allow
+                      $base64_3 = base64_encode($imagedata3);
             $html .= '<div class="result-item completed">
                   <table width="100%">
                     <tr>
-                      <td style="width:6%;"><span class="result-icon"><img src="'. WPMRDC_PLUGIN_DIR .'/includes/img/green-check.svg" alt="icon"></span></td>
+                      <td style="width:6%;"><span class="result-icon"><img src="data:image/svg;base64,'. $base64_3 .'" alt="icon"></span></td>
                       <td width="89%"><div class="result-meta">
                          <h4>'.$q_title.'</h4>
                          <p>'.$q_description.'</p>
@@ -477,10 +488,13 @@ class Checklist_Mrdigital_Ajax {
                   </table>
                 </div>';
             } else{
+              $imagedata4 = file_get_contents(WPMRDC_PLUGIN_DIR ."/includes/img/red-uncheck.svg");
+                   // alternatively specify an URL, if PHP settings allow
+              $base64_4 = base64_encode($imagedata4);
               $html .= '<div class="result-item not-complete">
                     <table width="100%">
                       <tr>
-                        <td style="width:6%;"><span class="result-icon"><img src="'. WPMRDC_PLUGIN_DIR .'/includes/img/red-uncheck.svg" alt="icon"></span></td>
+                        <td style="width:6%;"><span class="result-icon"><img src="data:image/svg;base64,'. $base64_4 .'" alt="icon"></span></td>
                         <td width="89%"><div class="result-meta">
                            <h4>'.$q_title.'</h4>
                            <p>'.$q_description.'</p>
@@ -508,7 +522,8 @@ class Checklist_Mrdigital_Ajax {
 		// $html .= '<div class="SetAutoPageBreak"></div>';
     //
 		//  $html .= '<p class="page">Page </p>';
-
+    // echo $html;
+    // exit;
 		 //$file_name = md5(rand()) . '.pdf';
 		 $file_name = 'chklst-' . strtolower(str_replace(' ', '-', $checker_name)) . date('m-d-Y-hia') . '.pdf';
 		$dompdf->loadHtml($html);
@@ -542,8 +557,8 @@ class Checklist_Mrdigital_Ajax {
       if(is_email($checker_email)){
     		 if(wp_mail( $checker_email, $subject, $message, $headers, $attachments )){
 
-           if(wp_mail( 'mohammed@mr-digital.co.uk, ross@mr-digital.co.uk', $subject2, $message2, $headers, $attachments )){
-             echo json_encode(array('sent'=>true, 'response'=>'<div style="margin-top:30px;" class="alert alert-success text-center">Your report is successfully sent. Please check your email inbox and spam folders too.</div>' ) );
+           if(wp_mail( 'hello@mr-digital.co.uk, ross@mr-digital.co.uk', $subject2, $message2, $headers, $attachments )){
+             echo json_encode(array('sent'=>true, 'redirect' => get_permalink(6784), 'response'=>'<div style="margin-top:30px;" class="alert alert-success text-center">Your report is successfully sent. Please check your email inbox and spam folders too.</div>' ) );
       		 die();
            }
 

@@ -56,9 +56,11 @@
         </div>
     </section><!-- process -->
 
+    <?php if( ! empty (get_field('session_title', get_the_id())) ): ?>
     <section class="strategy-session mt-5 grey">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section>
+    <?php endif;?>
 
     <section class="case-studies pt-5 mt-5 border-0">
         <?php get_template_part( 'parts/case-studies', 'slider' ); ?>
@@ -139,7 +141,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="mb-5">
-                        <h3 class="mb-3 fw-bolder h1"><?php echo __('FAQ'); ?></h3>
+                        <h3 class="mb-3 fw-bolder h1"><?php echo __('FAQs'); ?></h3>
                     </div>
                     <?php if( have_rows('faq') ): ?>
                     <?php $i = 1; ?>
@@ -166,9 +168,11 @@
         </div>
     </section>
 
+    <?php if( ! empty (get_field('session_title', get_the_id())) ): ?>
     <section class="strategy-session mt-5 border-bottom border-2 pb-5">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?> 
     </section><!-- strategy-session -->
+    <?php endif; ?>
 
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>

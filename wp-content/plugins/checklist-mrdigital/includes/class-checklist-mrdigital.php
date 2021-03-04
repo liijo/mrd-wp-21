@@ -106,38 +106,67 @@ class Checklist_Mrdigital {
 							 'public'             => true,
 							 'has_archive'        => false,
 							 'hierarchical'       => false,
+							 'publicly_queryable'  => false,
 							 'rewrite'            => array( 'slug' => 'mrd-checklists' ),
 							 'menu_icon'          => 'dashicons-carrot'
 					 )
 			 );
 
-			 /*register_post_type('mrd_questions',
+			 register_post_type('mrd_landing_pages',
 					 array(
 							 'labels' => array(
-									 'name'               => _x( 'Questions', 'mrdcposttype' ),
-									 'singular_name'      => _x( 'Questions', 'mrdcposttype'),
-									 'menu_name'          => _x( 'Questions', 'admin menu' ),
-									 'name_admin_bar'     => _x( 'Questions', 'admin menu' ),
-									 'add_new'            => _x( 'Add New Questions', 'mrdcposttype' ),
-									 'add_new_item'       => __( 'Add New Questions'),
-									 'new_item'           => __( 'New Questions'),
-									 'edit_item'          => __( 'Edit Questions'),
-									 'view_item'          => __( 'View Questions'),
-									 'all_items'          => __( 'Questions'),
-									 'search_items'       => __( 'Search Questions'),
-									 'parent_item_colon'  => __( 'Parent : Questions'),
-									 'not_found'          => __( 'No Questions found.'),
-									 'not_found_in_trash' => __( 'No Questions found in Trash.' )
+									 'name'               => _x( 'Landing Page', 'mrdcposttype' ),
+									 'singular_name'      => _x( 'Landing Page', 'mrdcposttype'),
+									 'menu_name'          => _x( 'Landing Page', 'admin menu' ),
+									 'name_admin_bar'     => _x( 'landing Page', 'admin menu' ),
+									 'add_new'            => _x( 'Add New Landing Page', 'mrdcposttype' ),
+									 'add_new_item'       => __( 'Add New Landing Page'),
+									 'new_item'           => __( 'New Landing Page'),
+									 'edit_item'          => __( 'Edit Landing Page'),
+									 'view_item'          => __( 'View Landing Page'),
+									 'all_items'          => __( 'Landing Page'),
+									 'search_items'       => __( 'Search'),
+									 'parent_item_colon'  => __( 'Parent'),
+									 'not_found'          => __( 'No found.'),
+									 'not_found_in_trash' => __( 'No found in Trash.' )
 							 ),
 							 'supports' => array("title", "editor"),
 							 'public'             => true,
 							 'has_archive'        => false,
 							 'hierarchical'       => false,
-							 'rewrite'            => array( 'slug' => 'mrd-questions' ),
-							 'show_in_menu' => 'edit.php?post_type=mrd_checklist',
+							 'rewrite'            => array( 'slug' => 'our-services' ),
+							 'show_in_menu' => true,
 							 'menu_icon'          => 'dashicons-carrot'
 					 )
-			 );*/
+			 );
+
+			 register_post_type('mrd_services',
+					 array(
+							 'labels' => array(
+									 'name'               => _x( 'Partner Services', 'mrdcposttype' ),
+									 'singular_name'      => _x( 'Partner Services', 'mrdcposttype'),
+									 'menu_name'          => _x( 'Partner Services', 'admin menu' ),
+									 'name_admin_bar'     => _x( 'Partner Services', 'admin menu' ),
+									 'add_new'            => _x( 'Add New Partner Services', 'mrdcposttype' ),
+									 'add_new_item'       => __( 'Add New Partner Services'),
+									 'new_item'           => __( 'New Partner Services'),
+									 'edit_item'          => __( 'Edit Partner Services'),
+									 'view_item'          => __( 'View Partner Services'),
+									 'all_items'          => __( 'Partner Services'),
+									 'search_items'       => __( 'Search'),
+									 'parent_item_colon'  => __( 'Parent'),
+									 'not_found'          => __( 'No found.'),
+									 'not_found_in_trash' => __( 'No found in Trash.' )
+							 ),
+							 'supports' => array("title", "editor"),
+							 'public'             => true,
+							 'has_archive'        => false,
+							 'hierarchical'       => false,
+							 'rewrite'            => array( 'slug' => 'agency-partner-services' ),
+							 'show_in_menu' => true,
+							 'menu_icon'          => 'dashicons-carrot'
+					 )
+			 );
 
 			 register_post_type('mrd_question_group',
 					 array(

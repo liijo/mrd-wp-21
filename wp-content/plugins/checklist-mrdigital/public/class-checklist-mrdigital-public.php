@@ -75,6 +75,29 @@ class Checklist_Mrdigital_Public {
 
 		//wp_enqueue_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/checklist-mrdigital-public.css', array(), $this->version, 'all' );
+		if(is_page_template( 'page-calculator.php' )){
+			wp_enqueue_style( 'mrd_clctr_css', plugin_dir_url( __FILE__ ) . 'css/mrd_calculator.css', array(), $this->version, 'all' );
+		}
+		if(is_page_template( 'page-marketing-calculator.php' )){
+			wp_enqueue_style( 'marketingcaculator', plugin_dir_url( __FILE__ ) . 'css/marketingcaculator.css', array(), $this->version, 'all' );
+		}
+
+		if ( is_singular( 'mrd_landing_pages' ) || (is_page_template( 'page-thankyoulp.php' )) ) {
+
+
+			wp_enqueue_style('avenir.css',  plugin_dir_url( __FILE__ ) . '/csslp/avenir.css');
+			wp_enqueue_style('stylelp.css',  plugin_dir_url( __FILE__ ) . '/csslp/style.css');
+			wp_enqueue_style('magnific-popup.css',  plugin_dir_url( __FILE__ ) . '/csslp/magnific-popup.css');
+			wp_enqueue_style('bootstrap-tokenfield',  plugin_dir_url( __FILE__ ) . '/csslp/bootstrap-tokenfield.min.css');
+			}
+		if ( (is_page_template( 'page-local-seo-page.php' )) || (is_page_template( 'page-all_marketing_package_2.php' )) || (is_page_template( 'page-partnerprogram_no_calc.php' )) || (is_page_template( 'page-partnerprogram.php' )) ) {
+
+
+			wp_enqueue_style('avenir.css',  plugin_dir_url( __FILE__ ) . '/csslp/avenir.css');
+			wp_enqueue_style('partner_style',  plugin_dir_url( __FILE__ ) . '/css/partner_style.css', "", "1.0.1");
+			wp_enqueue_style('magnific-popup.css',  plugin_dir_url( __FILE__ ) . '/csslp/magnific-popup.css');
+			wp_enqueue_style('partner_style2',  plugin_dir_url( __FILE__ ) . '/css/partner_style2.css');
+			}
 
 	}
 
@@ -100,9 +123,30 @@ class Checklist_Mrdigital_Public {
 		wp_enqueue_script( 'google-chart', 'https://www.gstatic.com/charts/loader.js', '', $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/checklist-mrdigital-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'checklist_ajax', plugin_dir_url( __FILE__ ) . 'js/checklist-mrdigital-ajax.js', array( 'jquery' ), $this->version, false );
-		wp_localize_script('checklist_ajax', 'ajaxcalls_vars', 
+		if(is_page_template( 'page-calculator.php' )){
+			wp_enqueue_script( 'mrd_clctr', plugin_dir_url( __FILE__ ) . 'js/mrd_clctr.js', array( 'jquery' ), $this->version, false );
+		}
+		if(is_page_template( 'page-marketing-calculator.php' )){
+			wp_enqueue_script( 'mrd_vue', plugin_dir_url( __FILE__ ) . 'js/vue.js', array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'mrd_package_clctr', plugin_dir_url( __FILE__ ) . 'js/pkg_bldr.js', array( 'jquery', 'mrd_vue' ), $this->version, true );
+		}
+		if ( is_singular( 'mrd_landing_pages' ) || (is_page_template( 'page-thankyoulp.php' )) ) {
+			wp_enqueue_script('bootstrap.bundle',  plugin_dir_url( __FILE__ ) . '/jslp/bootstrap.bundle.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_script('waterwheelCarousel',  plugin_dir_url( __FILE__ ) . '/jslp/jquery.waterwheelCarousel.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_script('magnific-popup',  plugin_dir_url( __FILE__ ) . '/jslp/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_script('bootstrap-tokenfield',  plugin_dir_url( __FILE__ ) . '/jslp/bootstrap-tokenfield.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_script('scriptlp',  plugin_dir_url( __FILE__ ) . '/jslp/scriptlp.js', array('jquery'), '1.0.0', true);
+
+			}
+		if ( (is_page_template( 'page-local-seo-page.php' )) || (is_page_template( 'page-partnerprogram_no_calc.php' )) || (is_page_template( 'page-all_marketing_package_2.php' ))  || (is_page_template( 'page-partnerprogram.php' )) ) {
+			wp_enqueue_script('magnific-popup',  plugin_dir_url( __FILE__ ) . '/jslp/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true);
+			wp_enqueue_script('scripts_partner',  plugin_dir_url( __FILE__ ) . 'js/script.js', array('jquery'), '1.0.2', true);
+
+			}
+		wp_localize_script('checklist_ajax', 'ajaxcalls_vars',
             array(
                     'admin_url'             =>  get_admin_url(),
+                    'theme_url'             =>  plugin_dir_url( __FILE__ ),
                 )
      		);
 

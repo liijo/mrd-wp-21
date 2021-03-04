@@ -20,15 +20,20 @@
           <![endif]-->
 </head>
    <body <?php body_class(); ?>>
-      <?php $disable = get_field('disable_banner', get_the_id()); ?>
-      <header <?php if(is_post_type_archive('works') || !empty($disable) || is_singular('post') || basename(get_page_template()) == 'page-projects.php') echo 'class="short-header"'; ?>>
+	    <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX3PG9Z"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="page-loader"></div>
+        <?php $disable = get_field('disable_banner', get_the_id()); ?>
+        <header <?php if(is_tax() || is_post_type_archive('works') || !empty($disable) || is_singular('post') || basename(get_page_template()) == 'page-projects.php') echo 'class="pt-3 short-header z-index-9"'; else echo 'class="pt-3 z-index-9"'; ?>>
 
-        <div class="position-absolute top-0 start-0 end-0 z-index-9 pt-4" id="top-bar">
+        <div class="" id="top-bar">
             <div class="container">
                 <div class="row">
                     
                     <!-- Menu -->
-                    <div class="col-md-4 col-3 pt-1">
+                    <div class="col-md-4 col-2">
                         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="toggle-wrap">
                                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +44,7 @@
                         </button>
                         <div class="navbar-collapse collapse text-center" id="navbarsExample01" style="">
                             <span class="circle"></span>
-                            <div class="d-flex align-items-center height-100">
+                            <div class="d-flex align-items-start align-items-md-center height-100">
                                 <?php
                                 wp_nav_menu(array
                                     (
@@ -55,18 +60,18 @@
                     </div>
 
                     <!-- Logo -->
-                    <div class="col-md-4 col-6 text-center">
+                    <div class="col-md-4 col-8 text-center">
                         <a class="blog-header-logo text-dark" href="<?php bloginfo('home'); ?>">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="182.408" height="49.144" viewBox="0 0 182.408 49.144"><rect class="a" width="6.533" height="9.339" transform="translate(10.245 10.119)"/><rect class="a" width="6.533" height="9.571" transform="translate(10.246 29.379)"/><path class="a" d="M41.62,41.11v0Z" transform="translate(-31.375 -30.99)"/><rect class="a" width="0.177" height="0.002" transform="translate(17.047 32.929)"/><path class="a" d="M67.12,48.6a12.122,12.122,0,0,0-3.744-4.421,15.144,15.144,0,0,0-5.3-2.363,25.75,25.75,0,0,0-6.024-.711H41.62a6.355,6.355,0,0,0,6.27,5.935h4a14.861,14.861,0,0,1,3.483.406,8.512,8.512,0,0,1,3.013,1.366A6.821,6.821,0,0,1,60.5,51.38a9.111,9.111,0,0,1,.793,4.054,9.167,9.167,0,0,1-.793,4.032,6.959,6.959,0,0,1-2.119,2.607,8.508,8.508,0,0,1-3.055,1.408,14.962,14.962,0,0,1-3.6.428H47.649a6.026,6.026,0,0,0-6.029,6.024v0H52.375a20.961,20.961,0,0,0,5.864-.837,15.424,15.424,0,0,0,5.194-2.607,13.213,13.213,0,0,0,3.707-4.52,14.139,14.139,0,0,0,1.406-6.528A14.851,14.851,0,0,0,67.12,48.6Z" transform="translate(-31.375 -30.989)"/><path class="a" d="M48.584,91.27l.044-5.428H48.6L46.6,91.27H45.3l-1.94-5.428h-.032l.042,5.428H41.63V83.6h2.636l1.745,4.923h.044L47.725,83.6h2.681v7.67Z" transform="translate(-31.382 -63.021)"/><path class="a" d="M87.766,91.27,86.1,88.225h-.635V91.27H83.66V83.6h2.924a5.039,5.039,0,0,1,1.078.113,2.817,2.817,0,0,1,.943.384,2.049,2.049,0,0,1,.667.716,2.215,2.215,0,0,1,.246,1.105,2.038,2.038,0,0,1-.421,1.31,2.317,2.317,0,0,1-1.172.761l2.006,3.281Zm-.084-5.32a.761.761,0,0,0-.113-.438.787.787,0,0,0-.293-.261,1.243,1.243,0,0,0-.4-.123,2.974,2.974,0,0,0-.421-.034h-.985v1.79h.881a2.782,2.782,0,0,0,.468-.039,1.433,1.433,0,0,0,.436-.135.822.822,0,0,0,.322-.281A.853.853,0,0,0,87.682,85.951Z" transform="translate(-63.066 -63.021)"/><path class="a" d="M168.39,68.915V39.06h7.252V68.915Z" transform="translate(-126.938 -29.445)"/><path class="a" d="M239.943,66.5a26.893,26.893,0,0,1-6.388.716,18.554,18.554,0,0,1-6.61-1.137,15.224,15.224,0,0,1-5.187-3.2,14.591,14.591,0,0,1-3.395-4.955,17.577,17.577,0,0,1,0-12.924,14.445,14.445,0,0,1,3.446-4.955,15.234,15.234,0,0,1,5.145-3.141,18.138,18.138,0,0,1,6.39-1.1,19.58,19.58,0,0,1,6.578,1.076,13.473,13.473,0,0,1,4.923,2.888L240.3,44.955a7.877,7.877,0,0,0-2.769-2.009,9.463,9.463,0,0,0-3.939-.78,8.674,8.674,0,0,0-3.5.7,8.433,8.433,0,0,0-2.784,1.937,8.817,8.817,0,0,0-1.834,2.954,10.354,10.354,0,0,0-.655,3.732,11.659,11.659,0,0,0,.591,3.793,8.164,8.164,0,0,0,1.75,2.969,7.957,7.957,0,0,0,2.868,1.94,10.248,10.248,0,0,0,3.9.7,14.709,14.709,0,0,0,2.4-.19,8.974,8.974,0,0,0,2.11-.613v-5.44h-5.694V48.83h12.308V64.648A22.87,22.87,0,0,1,239.943,66.5Z" transform="translate(-163.681 -26.985)"/><path class="a" d="M354.59,68.915V39.06h7.254V68.915Z" transform="translate(-267.302 -29.445)"/><path class="a" d="M413.071,45.224v23.7h-7.218v-23.7H397.42V39.07H421.5v6.154Z" transform="translate(-299.589 -29.452)"/><path class="a" d="M507.32,68.915,505,63.054H493.446l-2.193,5.861H483.41L495.935,39.06h7l12.4,29.855Zm-8.01-21.887-3.793,10.248h7.506Z" transform="translate(-364.411 -29.445)"/><path class="a" d="M623.19,68.915V39.06h7.254V62.633H642v6.282Z" transform="translate(-469.783 -29.445)"/><path class="a" d="M0,49.144H182.408V0H0ZM2.316,2.316H180.092V46.83H2.316Z"/></svg>
+                            <svg id="MrDigitalLogo" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 741 199.64" height="48px"><defs><style>.cls-1{fill:#fff;}.short-header .cls-1, #top-bar.visible .cls-1{fill:#000;} .cls-1.cls-3 {fill: #e30613;}</style></defs><title>Mr-Digital-New-Logo(White)</title><path class="cls-1" d="M746.77,209.64H-7.34V-7.25H746.77ZM9.41,190.24H731.59V9.41H9.41Z"></path><rect class="cls-1" x="41.63" y="41.12" width="26.54" height="37.94"></rect><rect class="cls-1" x="41.63" y="119.36" width="26.54" height="38.88"></rect><polygon class="cls-1" points="41.62 41.11 41.62 41.12 41.62 41.11 41.62 41.11"></polygon><rect class="cls-1" x="69.25" y="133.77" width="0.72" height="0.01"></rect><path class="cls-1 cls-3" d="M145.21,71.56A49.26,49.26,0,0,0,130,53.6,61.53,61.53,0,0,0,108.47,44,104.66,104.66,0,0,0,84,41.11H41.62v0c1.1,13.49,11.94,24.08,25.47,24.11H83.32a60.4,60.4,0,0,1,14.15,1.65,34.59,34.59,0,0,1,12.24,5.55,27.7,27.7,0,0,1,8.61,10.42q3.23,6.54,3.22,16.47,0,9.77-3.22,16.38a28.28,28.28,0,0,1-8.61,10.59A34.55,34.55,0,0,1,97.3,132a60.76,60.76,0,0,1-14.64,1.74H66.11a24.48,24.48,0,0,0-24.49,24.49H85.31a85.13,85.13,0,0,0,23.82-3.4,62.64,62.64,0,0,0,21.1-10.59,53.67,53.67,0,0,0,15.06-18.36Q151,114.75,151,99.36,151,82.82,145.21,71.56Z"></path><path class="cls-1" d="M69.88,114.76l.18-22.05h-.13l-8.1,22.05H56.55L48.67,92.71h-.13l.17,22.05H41.63V83.6H52.34l7.09,20h.18l6.78-20H77.28v31.16Z"></path><path class="cls-1" d="M100.34,114.76l-6.76-12.37H91v12.37H83.66V83.6H95.54a20.48,20.48,0,0,1,4.38.46,11.44,11.44,0,0,1,3.83,1.56,8.32,8.32,0,0,1,2.71,2.91,9,9,0,0,1,1,4.49,8.28,8.28,0,0,1-1.71,5.32,9.41,9.41,0,0,1-4.76,3.09l8.15,13.33ZM100,93.15a3.09,3.09,0,0,0-.46-1.78,3.19,3.19,0,0,0-1.19-1.06,5.07,5.07,0,0,0-1.64-.5A12,12,0,0,0,95,89.67H91v7.27h3.58a11.33,11.33,0,0,0,1.9-.16,5.82,5.82,0,0,0,1.77-.55,3.34,3.34,0,0,0,1.31-1.14A3.47,3.47,0,0,0,100,93.15Z"></path><path class="cls-1" d="M168.39,160.34V39.06h29.46V160.34Z"></path><path class="cls-1" d="M309.8,160.51a109.22,109.22,0,0,1-25.95,2.91A75.36,75.36,0,0,1,257,158.8a61.85,61.85,0,0,1-21.07-13,59.29,59.29,0,0,1-13.79-20.13,66.21,66.21,0,0,1-5-26.12,66.43,66.43,0,0,1,5-26.38,58.69,58.69,0,0,1,14-20.13,61.88,61.88,0,0,1,20.9-12.76A73.69,73.69,0,0,1,283,35.8a79.54,79.54,0,0,1,26.72,4.37q12.33,4.36,20,11.73L311.25,73A32,32,0,0,0,300,64.84,38.43,38.43,0,0,0,284,61.67,35.23,35.23,0,0,0,269.8,64.5a34.26,34.26,0,0,0-11.31,7.87,35.82,35.82,0,0,0-7.45,12,42.06,42.06,0,0,0-2.66,15.16,47.39,47.39,0,0,0,2.4,15.41A33.16,33.16,0,0,0,257.89,127a32.33,32.33,0,0,0,11.65,7.88,41.64,41.64,0,0,0,15.85,2.83,59.77,59.77,0,0,0,9.76-.77,36.46,36.46,0,0,0,8.57-2.49v-22.1H280.59V88.74h50V153A92.93,92.93,0,0,1,309.8,160.51Z"></path><path class="cls-1" d="M354.59,160.34V39.06h29.47V160.34Z"></path><path class="cls-1" d="M461,64.07v96.27H431.68V64.07H397.42v-25h97.81v25Z"></path><path class="cls-1" d="M580.54,160.34l-9.42-23.81H524.18l-8.91,23.81H483.41L534.29,39.06h28.43l50.37,121.28ZM548,71.43l-15.41,41.63h30.49Z"></path><path class="cls-1" d="M623.19,160.34V39.06h29.47v95.76h46.93v25.52Z"></path></svg>
                             <p class="mb-0">Award-winning digital marketing agency</p>
                         </a>
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="col-md-4 col-3 d-flex justify-content-end align-items-top">
+                    <div class="col-md-4 col-2 d-flex justify-content-end align-items-top">
                         <div class="quick-contact">
-                            <a href="tel:01483920998" class="btn btn-outline-secondary btn-white border-end-0"><span class="icon-phone pe-2"></span><span class="d-none d-sm-inline"> <?php echo get_theme_mod('header_phone'); ?></span></a>
-                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary d-xs-none"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
+                            <a href="tel:01483920998" class="btn btn-outline-secondary btn-white border-end-0 rounded-start"><span class="icon-phone pe-2"></span><span class="d-none d-sm-inline"> <?php echo get_theme_mod('header_phone'); ?></span></a>
+                            <a href="<?php echo get_theme_mod('enquire', '#'); ?>" class="btn btn-primary d-xs-none rounded-end"><span class="icon-send d-sm-none"></span><span class="d-none d-sm-inline"> <?php echo __('Enquire Now'); ?></span></a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +79,13 @@
 
         </div><!-- .row end -->
 
-        <?php get_template_part( 'parts/page', 'banner' ); ?>
 
     </header>
     <!-- header -->
+    <?php get_template_part( 'parts/page', 'banner' ); ?>
+    <?php if(!empty($disable) && !is_page_template('template-contactus.php')) echo '<div class="clearfix mb-5"></div>'; ?>
+    <?php $wrapper = get_field('enable_wrapper'); 
+    if(!empty($wrapper) && $wrapper[0] == 'Yes'):
+    ?>
+    <section id="content-container" class="section-default-alt">
+    <?php endif;?>

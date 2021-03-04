@@ -1,4 +1,6 @@
-<?php $deliverResults = get_theme_mod('deliver_results'); ?>
+<?php 
+$pageId = get_the_id();
+$deliverResults = get_theme_mod('deliver_results'); ?>
     <section class="result-oriented grey">
         <div class="container">
             <div class="text-center">
@@ -14,7 +16,12 @@
                 <?php } ?>
             </div>
 
-            <?php $args = array( 'post_type' => 'testimonials_video', 'showposts' => 6 );
+            <?php 
+            $vTestimIds = get_field('select_video_testimonials');
+            $args = array( 'post_type' => 'testimonials_video', 'showposts' => 6 );
+            if(!empty($vTestimIds))
+                $args = array( 'post_type' => 'testimonials_video', 'post__in' => $vTestimIds );
+
             $testimonyQuery = new WP_Query($args);
             if($testimonyQuery->have_posts()): ?>
                 <div class="result-slider owl-carousel">
@@ -28,7 +35,14 @@
                             if(! empty(get_field('thumbnail')) ){?>
                             <div class="play-button">
                                 <a href="#" class="btn-play" data-bs-toggle="modal" data-bs-target="#video-popup" data-id="<?php the_id(); ?>">
-                                    <span class="icon-play-button-arrowhead"></span>
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="85" height="86" viewBox="0 0 85 86">
+                                      <g id="Group_12356" data-name="Group 12356" transform="translate(-0.4 0.024)">
+                                        <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="42.5" cy="43" rx="42.5" ry="43" transform="translate(0.4 -0.024)" fill="#fff"/>
+                                        <path id="Polygon_1" data-name="Polygon 1" d="M14.519,3.648a3,3,0,0,1,4.962,0L30.813,20.313A3,3,0,0,1,28.332,25H5.668a3,3,0,0,1-2.481-4.687Z" transform="translate(59.4 25.976) rotate(90)" fill="#e30613"/>
+                                      </g>
+                                    </svg>
+
                                 </a>
                             </div>
                             <?php } ?>

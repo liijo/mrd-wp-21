@@ -4,6 +4,7 @@ jQuery(document).ready(function(){
 		loop:true,
 		margin: 0,
 		nav:true,
+		//autoHeight:true,
 		navText: ['<span class="icon-left-arrow"></span>', '<span class="icon-next-arrow"></span>'],
 		responsive:{
 			0:{
@@ -26,4 +27,12 @@ jQuery(document).ready(function(){
 		}
 	});
 
+});
+
+jQuery(window).scroll(function() {
+   if(jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height() - 500) 
+       jQuery('.blog-social-frame').hide();
+   
+   else
+       jQuery('.blog-social-frame').show();
 });

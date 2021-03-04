@@ -1,10 +1,10 @@
+<?php $resultId = get_theme_mod('result_count'); ?>
 <section class="results grey" id="counter">
     <div class="container">
         <div class="text-center mb-5">
-            <h3 class="section-title mb-3">We get <span>Real Results…</span></h3>
-            <p class="mb-4">Check out average results across our clients in 2020.</p>
+            <h3 class="section-title mb-3"><?php echo get_field('title', $resultId); ?></h3>
+            <p class="mb-4"><?php echo get_field('subtitle', $resultId); ?></p>
         </div>
-        <?php $resultId = get_theme_mod('result_count'); ?>
         <?php if( have_rows('result', $resultId) ): ?>
         <div class="row">
             <?php while( have_rows('result', $resultId) ) : the_row(); ?>

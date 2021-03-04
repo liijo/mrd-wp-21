@@ -1,4 +1,7 @@
-<?php $logoId = get_theme_mod('featured_logo'); ?>
+<?php 
+$disable = get_field('hide_featured_in');
+if(empty($disable)){
+$logoId = get_theme_mod('featured_logo'); ?>
 <section class="featured">
     <div class="container">
         <div class="row logos d-flex align-items-center justify-content-between">
@@ -15,3 +18,7 @@
         </div>
     </div>
 </section>
+<?php } 
+else
+    echo '<div class="clearfix pt-5 mb-5"></div>';
+?>

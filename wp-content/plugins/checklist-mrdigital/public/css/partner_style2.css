@@ -1,0 +1,233 @@
+/*
+Theme Name: Mr Digital Calculator 3
+Theme URI: mr-digital.co.uk
+Author: Gopu Mr Digital
+Author URI: mr-digital.co.uk
+Description: Mr Digital Calculator 3
+Version: 1.0
+License: GNU General Public License v2 or later
+*/
+.owl-carousel .owl-item img {
+    height: auto;
+}
+.process-list .panel-img img {
+    width: 100%;
+    height: auto;
+}
+.preloaders {
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    font-size: 60px;
+    background-color: #fffc;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 150px;
+    left: 0;
+    color: #dc0000;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+form#formsubmit {
+    position: relative;
+}
+.row-expert .owl-nav {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	margin-top: -44px;
+	height: 0;
+}
+.row-expert .owl-nav button.owl-prev ,
+.row-expert .owl-nav button.owl-next {
+	line-height: 1;
+	padding: 0;
+	position: relative;
+}
+.row-expert .owl-nav button.owl-prev {
+	float: left;
+	left: -40px;
+}
+.row-expert .owl-nav button.owl-next {
+	float: right;
+	right: -40px;
+}
+.row-expert .owl-nav button.owl-prev img,
+.row-expert .owl-nav button.owl-next img {
+	width: 24px;
+	height: 24px;
+	opacity: 0.5;
+}
+.row-expert .owl-nav button.owl-prev:hover img,
+.row-expert .owl-nav button.owl-next:hover img { opacity: 1; }
+div#project-terms {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+div#project-terms a {
+    display: inline-block;
+    padding: 5px 20px;
+    border: solid 1px #ccc;
+    font-size: 15px;
+}
+
+div#project-terms a:hover, div#project-terms a.active {
+    background-color: #e30613;
+    color: #fff;
+    border: none;
+}
+.row-expert .panel-content {
+    position: absolute;
+    bottom: -150%;
+    padding: 30px;
+    background-color: #d20511bd;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+.expert-work-panel .panel-media, .expert-work-panel{
+  margin-bottom: 0 !important;
+}
+.expert-work-panel .panel_link{
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.row-expert .panel-content h4 {
+    color: #fff;
+}
+.row-expert .expert-work-panel:hover .panel-content{
+  bottom: 0;
+}
+.service-panel-icon .icon:hover { background: var(--brand-primary-color); }
+.service-panel-icon .icon:hover svg .b, .service-panel-icon .icon:hover svg .ba, .service-panel-icon .icon:hover svg path,
+.service-panel-icon .icon:hover svg .c { fill: #FFFFFF; }
+.service-panel-icon .icon:hover svg .d { fill: #FFFFFF; }
+
+
+.service-section-counter {
+	background: #000000 url('../img/counter-section-bg.png') no-repeat center/cover;
+	position: relative;
+	padding: 60px 0 100px 0;
+}
+.service-section-counter:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+}
+.si-counter-panel {
+	margin: 10px 0;
+	text-align: center;
+}
+.si-counter-panel .icon { margin-bottom: 25px; position: relative;}
+.si-counter-panel .icon img { width: 30px; }
+.si-counter-panel .number {
+	font-size: 42px;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+      position: relative;
+}
+.si-counter-panel .number small {
+	font-size: 25px;
+	color: #CB0D0D;
+}
+.si-counter-panel .title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #FFFFFF;
+	position: relative;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+}
+.rating a{
+	width:49%;
+}
+
+
+@media screen and (max-width:768px){
+  .col-lg-6.service-calc-frame.include_div{
+    display: none !important;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  .service-calc-frame .result-panel {
+    margin-top: 30px;
+  }
+  .form-group-alt .form-control {
+    font-size: 16px;
+  }
+  .team-panel .panel-media::before {
+      left: 12px;
+      width: 10px;
+      height: 10px;
+  }
+  .team-panel .panel-media {
+    width: 130px;
+    height: 130px;
+  }
+  .team-panel .panel-media img {
+    width: 130px;
+  }
+  .row-expert {
+    margin-left: 0;
+    margin-right: 0;
+}
+  div#project-terms a {
+      padding: 5px 10px;
+      font-size: 13px;
+      margin: 4px 0px;
+  }
+  .row-expert .owl-nav{
+    top: auto;
+    bottom: 60%;
+  }
+  .row-expert .owl-nav button.owl-prev{
+    left: 0;
+  }
+  .row-expert .owl-nav button.owl-next {
+    right: 0;
+  }
+  .row-expert .panel-content p{
+    display: none;
+  }
+  .row-expert .panel-content{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+  }
+  .row-expert .panel-content h4{
+    margin: 0;
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .team-panel .panel-media::before {
+      left: 12px;
+      width: 10px;
+      height: 10px;
+  }
+  .team-panel .panel-media {
+    width: 130px;
+    height: 130px;
+  }
+  .team-panel .panel-media img {
+    width: 130px;
+  }
+}

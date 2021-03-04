@@ -1,23 +1,61 @@
+	<?php $wrapper = get_field('enable_wrapper'); 
+    if(!empty($wrapper) && $wrapper[0] == 'Yes'):
+    ?>	</section>
+    <?php endif;?>
 <!-- Footer -->
-	<?php if ( is_active_sidebar( 'mrd-footer-logo-widgets' ) ) { ?>
+	<?php if ( is_active_sidebar( 'mrd-footer-logo-widgets' ) && ! is_404() ) { ?>
 	    <section class="bottom-logos text-center">
 			<div class="container">
 				<div class="row align-items-center">
-			        <?php dynamic_sidebar('mrd-footer-logo-widgets'); ?>
-			    </div>
+		            <div class="col-lg-2 col-md-3"><span><?php echo __('CERTIFIED EXPERTS'); ?></span></div>
+		            <div class="col-lg-10 col-md-9">
+		                <div class="row justify-content-between align-items-center">
+		                    <?php dynamic_sidebar('mrd-footer-logo-widgets'); ?>
+		                </div>
+		            </div>
+		        </div>
 			</div>
 		</section>
 	<?php } ?>
 
 	<!-- ===== FOOTER ===== -->
-	<?php if ( is_active_sidebar( 'mrd-footer-widgets' ) ) { ?>
 	<footer class="site-footer">
+
+	<?php if ( is_active_sidebar( 'mrd-footer-mobile-widgets' ) ) { ?>
+		<!-- FOOTER -->
+		<div class="d-block d-md-none">
 		<div class="top-footer">
 			<div class="container">
 				<div class="row">
-					<?php dynamic_sidebar('mrd-footer-widgets'); ?>
+					<div class="col-12">
+						<?php dynamic_sidebar('mrd-footer-mobile-widgets'); ?>
+					</div>
 				</div>
 			</div>
+		</div>
+		</div>
+	<?php } ?>
+
+
+		<div class="d-none d-md-block">
+		<div class="top-footer d-none d-md-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-12">
+						<?php dynamic_sidebar('mrd-footer-widgets-1'); ?>
+					</div>
+					<div class="col-xl-3 col-md-12">
+						<?php dynamic_sidebar('mrd-footer-widgets-2'); ?>
+					</div>
+					<div class="col-xl-3 col-md-12">
+						<?php dynamic_sidebar('mrd-footer-widgets-3'); ?>
+					</div>
+					<div class="col-xl-3 col-md-12">
+						<?php dynamic_sidebar('mrd-footer-widgets-4'); ?>
+					</div>
+				</div>
+			</div>
+		</div>
 		</div>
 		<div class="bottom-footer">
 			<div class="container">
@@ -34,7 +72,6 @@
 			</div>
 		</div>
 	</footer>
-	<?php } ?>
 	<!-- Case study Modal -->
     <div class="modal fade" id="csModal" tabindex="-1" aria-labelledby="csModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -42,7 +79,7 @@
                 <div class="modal-header border-0">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <div>
-                        <a href="#" id="download-file" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1" download><span class=""></span> Download</a>
+                        <a href="#" id="download-file" class="btn btn-primary btn-print rounded ps-4 pe-4 pt-1 pb-1 text-uppercase" download><span class=""></span> Download</a>
                         <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
@@ -52,12 +89,10 @@
                 </div>
             </div>
         </div>
-        <div class="modal-nav">
-            <button class="btn btn-prev get_adjacent" id="prevpost"><span class="icon-left-arrow"></span></button>
-            <button class="btn btn-next get_adjacent" id="nextpost"><span class="icon-next-arrow"></span></button>
-            <input type="hidden" name="prev_post" value=""/>
-            <input type="hidden" name="next_post" value=""/>
-        </div>
+        <!-- <div class="modal-nav">
+            <button class="btn btn-prev" id="prevpost"><span class="icon-left-arrow"></span></button>
+            <button class="btn btn-next" id="nextpost"><span class="icon-next-arrow"></span></button>
+        </div> -->
     </div>
     <?php wp_footer(); ?>
     </body>

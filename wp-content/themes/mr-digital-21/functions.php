@@ -1,9 +1,34 @@
 <?php
 include 'inc/theme-options.php';
+//** *Enable upload for webp image files.*/
+function webp_upload_mimes($existing_mimes) {
+    $existing_mimes['webp'] = 'image/webp';
+    return $existing_mimes;
+}
+add_filter('mime_types', 'webp_upload_mimes');
+
+//** * Enable preview / thumbnail for webp image files.*/
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 add_theme_support( 'post-thumbnails' );
 if (function_exists('add_image_size')) {
 	add_image_size('video_testimonial_t', 623, 520, true);
-	add_image_size('case_studies_t', 637, 478, true);
+	add_image_size('case_studies_t', 686, 520, true);
 	add_image_size('testimonial_avatar', 76, 76, true);
 	add_image_size('testimonial_logo', 179, 46, true);
 	add_image_size('team', 173, 173, true);
@@ -53,7 +78,7 @@ if (!function_exists('theme_init_script')){
 	    );
 		wp_enqueue_script('e-script', get_template_directory_uri() . '/js/e-script.js', array('jquery'), '1.0.0', true);
         
-        wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
+        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
         wp_enqueue_style('icon', get_template_directory_uri() . '/css/icons.css');
         wp_enqueue_style('owl', get_template_directory_uri() . '/css/owl.carousel.min.css');
         wp_enqueue_style('owl-theme', get_template_directory_uri() . '/css/owl.theme.default.min.css');
@@ -66,7 +91,8 @@ include 'inc/post-types.php';
 
 //Custom excerpt length
 function mrd_get_the_excerpt($length, $postId){
-	$excerpt = get_the_excerpt($postId);
+	$excerpt = get_the_content($postId);
+	$excerpt = strip_tags($excerpt);
 	$nExcerpt = substr($excerpt, 0, $length);
 	return $nExcerpt;
 }
@@ -77,7 +103,7 @@ function mrd_widgets_init() {
 	        'name'          => __( 'Footer Logos', 'mrdigital' ),
 	        'id'            => 'mrd-footer-logo-widgets',
 	        'description'   => __( 'Widgets in this area will show logos in the footer, before comments.', 'mrdigital' ),
-	        'before_widget' => '<div class="col-md-3 col-lg-3 widget %2$s">',
+	        'before_widget' => '<div class="col-md-3 col-lg-3 col-6 widget %2$s">',
 	        'after_widget'  => '</div>',
 	        'before_title'  => '<h2 class="widget-title">',
 	        'after_title'   => '</h2>',        
@@ -85,11 +111,55 @@ function mrd_widgets_init() {
     );
     register_sidebar( 
     	array(
-	        'name'          => __( 'Footer Widgets', 'mrdigital' ),
-	        'id'            => 'mrd-footer-widgets',
+	        'name'          => __( 'Footer Widgets 1', 'mrdigital' ),
+	        'id'            => 'mrd-footer-widgets-1',
 	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
-	        'before_widget' => '<div class="col-xl-3 col-md-12 widget %2$s"><div class="footer-panel ">',
+	        'before_widget' => '<div class="widget %2$s"><div class="footer-panel ">',
 	        'after_widget'  => '</div></div>',
+	        'before_title'  => '<h4 class="widget-title">',
+	        'after_title'   => '</h4>',        
+    	)
+    );
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Widgets 2', 'mrdigital' ),
+	        'id'            => 'mrd-footer-widgets-2',
+	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="widget %2$s"><div class="footer-panel ">',
+	        'after_widget'  => '</div></div>',
+	        'before_title'  => '<h4 class="widget-title">',
+	        'after_title'   => '</h4>',        
+    	)
+    );
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Widgets 3', 'mrdigital' ),
+	        'id'            => 'mrd-footer-widgets-3',
+	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="widget %2$s"><div class="footer-panel ">',
+	        'after_widget'  => '</div></div>',
+	        'before_title'  => '<h4 class="widget-title">',
+	        'after_title'   => '</h4>',        
+    	)
+    );
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Widgets 4', 'mrdigital' ),
+	        'id'            => 'mrd-footer-widgets-4',
+	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="widget %2$s"><div class="footer-panel ">',
+	        'after_widget'  => '</div></div>',
+	        'before_title'  => '<h4 class="widget-title">',
+	        'after_title'   => '</h4>',        
+    	)
+    );
+    register_sidebar( 
+    	array(
+	        'name'          => __( 'Footer Mobile Widgets', 'mrdigital' ),
+	        'id'            => 'mrd-footer-mobile-widgets',
+	        'description'   => __( 'Widgets in this area will be shown as footer, before comments.', 'mrdigital' ),
+	        'before_widget' => '<div class="col-12 widget %2$s">',
+	        'after_widget'  => '</div>',
 	        'before_title'  => '<h4 class="widget-title">',
 	        'after_title'   => '</h4>',        
     	)
@@ -101,19 +171,19 @@ add_action('wp_ajax_nopriv_get_popup_content', 'getPopupContent');
 add_action('wp_ajax_get_popup_content', 'getPopupContent');
 function getPopupContent(){
 	$title = get_the_title($_POST['postId']);
-	$prev_post = mrd_get_previous_post($_POST['postId']);
-	$next_post = mrd_get_next_post( $_POST['postId'] );
+	$prev_post = get_adjacent_post( true, '', true, '' );
+	$next_post = get_adjacent_post( true, '', false, '' );
 	$image = '';
 	if(get_field('image', $_POST['postId']))
-		$image = '<img src="' . get_field('image', $_POST['postId']) . '" alt="" class="d-print-none rounded shadow mb-4" />';
+		$image = get_the_post_thumbnail($_POST['postId'], 'large', array( 'class' => 'd-print-none rounded shadow mb-4' )); 
 	$image .= '<div class="text-start"><h3 class="d-print-block d-none">'.$title.'</h3>';
 	$image .= get_the_content('', '', $_POST['postId']) . '</div>';
 	$file   = get_field('file', $_POST['postId']);
 	$retArr = array(
 		'title'    => $title, 
 		'image'    => $image, 
-		'prevpost' => $prev_post, 
-		'nextpost' => $next_post,
+		'prevpost' => $prev_post->ID, 
+		'nextpost' => $next_post->ID,
 		'file'	   => $file
 	);
 	wp_send_json($retArr);
@@ -134,30 +204,33 @@ function getPopupContentVideo(){
 	die;
 }
 
-function mrd_get_previous_post($post_id){
-	global $wpdb;
-	$prev_id = null;
-	$postType = get_post_type($post_id);
-	$sql = 'SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_type = "'.$postType.'"';
-	$results = $wpdb->get_col( $wpdb->prepare($sql));
-	foreach($results as $key => $id){
-		$prev = $results[$key-1];
-		if($id == $post_id)
-    		$prev_id = $prev;
-	}
-	return $prev_id;
+add_filter( 'body_class', function( $classes ) {
+    $classes[] = get_field('body_class', get_the_id());
+    return $classes;
+} );
+
+add_action('wp_head', 'seoSnipets', 1);
+function seoSnipets(){
+	?><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MX3PG9Z');</script>
+<!-- End Google Tag Manager --><?php
 }
 
-function mrd_get_next_post($post_id){
-	global $wpdb;
-	$next_id = null;
-	$postType = get_post_type($post_id);
-	$sql = 'SELECT ID FROM '.$wpdb->prefix.'posts WHERE post_type = "'.$postType.'"';
-	$results = $wpdb->get_col( $wpdb->prepare($sql));
-	foreach($results as $key => $id){
-		$next = $results[$key+1];
-		if($id == $post_id)
-    		$next_id = $next;
-	}
-	return $next_id;
+add_action( 'wp_footer', 'redirect_cf7' );
+ 
+function redirect_cf7() {
+?>
+<script type="text/javascript">
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+   if ( '5' == event.detail.contactFormId ) { 
+    location = 'https://www.mr-digital.co.uk/thank-you-for-your-website-enquiry/';
+    } 
+  
+}, false );
+</script>
+<?php
 }

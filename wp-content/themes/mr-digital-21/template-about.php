@@ -116,7 +116,7 @@ get_header(); ?>
     <?php if( have_rows('content_blocks_2') ): ?>
         <?php $i = 0; ?>
         <?php while( have_rows('content_blocks_2') ) : the_row(); ?>
-        <?php $cssClass = ($i % 2 == 0) ? 'si-about-p-tracker mb-5' : 'si-about-promise' ?>
+        <?php $cssClass = ($i % 2 == 0) ? 'si-about-p-tracker mb-md-5' : 'si-about-promise' ?>
         <!-- ===== SECTION ===== -->
         <section class="<?php echo $cssClass; ?>">
             <div class="container-fluid">
@@ -154,9 +154,11 @@ get_header(); ?>
         </div>
     </section><!-- .section-podcast -->
 
-    <section class="strategy-session mt-5 grey">
+    <?php if( ! empty (get_field('session_title', get_the_id())) ): ?>
+    <section class="strategy-session mt-md-5 grey">
         <?php get_template_part( 'parts/template-strategy', 'session' ); ?>
     </section>             
+    <?php endif;?>
 
 <?php endif;?>
 <?php get_footer(); ?>

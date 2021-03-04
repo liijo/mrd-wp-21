@@ -16,11 +16,11 @@
                         $termId = get_queried_object();
 
                     if ( !empty($department) ) :
-                        $selected = '';
                         ?><div class="cs-dropdown-main">
                         <select name="work_category" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                             <option selected value="">All Case Studies</option><?php
                             foreach( $department as $category ) {
+                                $selected = '';
                                 if($termId->term_id > 0 && $termId->term_id == $category->term_id) 
                                     $selected = 'selected="selected"';
                             ?><option value="<?php echo get_term_link($category); ?>" <?php echo $selected; ?>>
@@ -60,7 +60,7 @@
                 <?php endwhile;?>
             </div>
             <?php endif;?>
-            <?php echo do_shortcode('[ajax_load_more archive="true" offset="6" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
+            <?php echo do_shortcode('[ajax_load_more archive="true" offset="10" id="works" container_type="div" css_classes="post-grid" post_type="works" posts_per_page="6" taxonomy="work_category" taxonomy_terms="" taxonomy_operator="IN" pause="true" images_loaded="true" scroll="false" transition_container_classes="row" button_label="Load More Posts" no_results_text="<div class="no-results">Sorry, nothing found in this query</div>"]'); ?>
             <div class="text-center"><span class="loader-3 text-danger"></span></div>            
         </div>
     </section>

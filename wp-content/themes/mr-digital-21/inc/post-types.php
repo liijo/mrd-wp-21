@@ -17,6 +17,7 @@ function create_post_type(){
 	    'menu_icon'        => 'dashicons-editor-insertmore',
 	    'hierarchical'     => false,
 	    'rewrite'          => array('slug' => 'templates'),
+        'publicly_queryable'  => false
 	    )
 	);
 
@@ -36,6 +37,7 @@ function create_post_type(){
 	    'menu_icon'        => 'dashicons-buddicons-buddypress-logo',
 	    'hierarchical'     => false,
 	    'rewrite'          => array('slug' => 'client-testimonials'),
+        'publicly_queryable'=> false
 	    )
 	);
 
@@ -55,7 +57,8 @@ function create_post_type(){
         'capability_type'   => 'post',
         'menu_icon'         => 'dashicons-media-document',
         'hierarchical'      => false,
-        'rewrite'           => array('slug' => 'case-studies'),
+        //'rewrite'           => array('slug' => 'case-studies'),
+        'publicly_queryable'=> false
         )
     );
 
@@ -80,6 +83,7 @@ function create_post_type(){
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'work_category' ),
+        'publicly_queryable'=> false
     );
  
     register_taxonomy( 'work_category', array( 'works' ), $args );
@@ -103,6 +107,7 @@ function create_post_type(){
           'menu_icon'       => 'dashicons-buddicons-buddypress-logo',
         'hierarchical'      => false,
         'rewrite'           => array('slug' => 'testimonials'),
+        'publicly_queryable'=> false
         )
     );
 
@@ -123,6 +128,7 @@ function create_post_type(){
         'menu_icon'         => 'dashicons-media-document',
         'hierarchical'      => false,
         'rewrite'           => array('slug' => 'team'),
+        'publicly_queryable'=> false
         )
     );
 
@@ -147,6 +153,7 @@ function create_post_type(){
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'hobbies' ),
+        'publicly_queryable'=> false
     );
  
     register_taxonomy( 'hobbies', array( 'team' ), $args );
@@ -175,6 +182,7 @@ function create_post_type(){
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'department' ),
+        'publicly_queryable'=> false
     );
  
     register_taxonomy( 'department', array( 'team' ), $args );
@@ -197,6 +205,7 @@ function create_post_type(){
         'menu_icon'         => 'dashicons-format-audio',
         'hierarchical'      => false,
         'rewrite'           => array('slug' => 'podcast'),
+        'publicly_queryable'=> false
         )
     );
 
@@ -221,44 +230,12 @@ function create_post_type(){
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'podcast_type' ),
+        'publicly_queryable'=> false
     );
  
     register_taxonomy( 'podcast_type', array( 'podcast' ), $args );
     unset( $args );
     unset( $labels );
-
-    /*register_post_type('services', array(
-        'labels' => array(
-            'name'          => __('Services', 'gopustheme'),
-            'singular_name' => __('Services', 'gopustheme'),
-            'add_new'       => __('Add New', 'gopustheme'),
-            'add_new_item'  => __('Add New', 'gopustheme'),
-            'edit'          => __('Edit', 'gopustheme'),
-            'edit_item'     => __('Edit', 'gopustheme')
-        ),
-        'supports'          => array("title", "thumbnail", 'editor', 'page-attributes', 'revisions', 'excerpt'),
-        'public'            => true,
-        'menu_position'     => 5,
-        'capability_type'   => 'page',
-        'menu_icon'         => 'dashicons-groups',
-        'hierarchical'      => false,
-        'rewrite'           => array('slug' => 'our-services'),
-        )
-    );*/
-
-    register_taxonomy(
-        'bad_tag', 
-        array('services'), 
-        array(
-            'hierarchical'  => true, 
-            'label'         => 'Mailchimp Tag', 
-            'query_var'     => true, 
-            'rewrite'       => array(
-                'slug'      => 'business_tag'
-            ), 
-            'show_in_rest'  => false,   
-        )
-    );
 
     register_post_type('events', array(
         'labels' => array(
@@ -277,6 +254,7 @@ function create_post_type(){
         'menu_icon'         => 'dashicons-groups',
         'hierarchical'      => false,
         'rewrite'           => array('slug' => 'events'),
+        'publicly_queryable'=> false
         )
     );
 
@@ -301,6 +279,7 @@ function create_post_type(){
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'event_category' ),
+        'publicly_queryable'=> false
     );
  
     register_taxonomy( 'event_category', array( 'events' ), $args );

@@ -1,5 +1,5 @@
 <?php
-$args = array( 'showposts' => 6 );
+$args = array( 'showposts' => 6, 'cat' => 11 );
 $blog = new WP_Query($args);
 if($blog->have_posts()):
 	?><div class="blog-slider owl-carousel"><?php
@@ -29,10 +29,8 @@ if($blog->have_posts()):
 	                        </div>
                         </div>
                         <div class="share-icons">
-                        	<div class="icon-list">
-                        		<span class="icon-share rounded-circle d-block"></span>
-                        		<?php echo sharethis_inline_buttons(); ?>
-                        	</div>
+                    		<span class="icon-share rounded-circle d-block"></span>
+                    		<?php echo sharethis_inline_buttons(); ?>
                         </div>
                     </div>
 				</div>

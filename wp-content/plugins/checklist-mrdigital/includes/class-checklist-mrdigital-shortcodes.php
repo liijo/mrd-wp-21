@@ -112,6 +112,7 @@ class Checklist_Mrdigital_ShortCodes {
 	    ));
 			while ($mrdq->have_posts()) : $mrdq->the_post();
 			global $post;
+
 			$output ='<div class="seo-list-frame" id="mrd_checklist">
     <div class="container_check">
 			<div class="mrd_checklist_item mrd_checklist_test active">
@@ -163,7 +164,7 @@ class Checklist_Mrdigital_ShortCodes {
                 </div>
               </div>
               <div class="col-md-3">
-                <a href="#mrd_checklist" class="btn btn-site-red btn-block btn-next check_step_button_first" data-step="mrd_s_2" data-next="check_step-2">Next
+                <a href="#mrd_checklist" class="btn btn-primary rounded check_step_button_first" data-step="mrd_s_2" data-next="check_step-2">Next
                   <svg xmlns="http://www.w3.org/2000/svg" width="21.905" height="18.828" viewBox="0 0 21.905 18.828">
                     <g id="Group_902" data-name="Group 902" transform="translate(-1072.136 -8429.086)">
                       <path id="Path_5202" data-name="Path 5202" d="M1068.041,8405l8,8-8,8" transform="translate(17 25.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -213,7 +214,7 @@ class Checklist_Mrdigital_ShortCodes {
                   <span class="round-box"><i></i></span>
                   <div class="card-header" id="headingOne">
                     '.$q_title.'
-                    <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse_'.$q_group.'_'.$count.'" aria-expanded="true" aria-controls="collapse_'.$q_group.'_'.$count.'"></button>
+                    <button class="btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_'.$q_group.'_'.$count.'" aria-expanded="true" aria-controls="collapse_'.$q_group.'_'.$count.'"></button>
                   </div>
                   <div id="collapse_'.$q_group.'_'.$count.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSEOList">
                     <div class="card-body">'.$q_description.'</div>
@@ -231,9 +232,9 @@ class Checklist_Mrdigital_ShortCodes {
             </div>
 
             <div class="row mt-3">
-              <div class="col-6 text-left"><a href="#mrd_checklist" class="btn btn-site-light mrdc_prev_btn" data-prev="check_step-'. $prev_c .'">Back</button></div>';
+              <div class="col-6 text-left"><a href="#mrd_checklist" class="btn btn-outline-primary rounded mrdc_prev_btn" data-prev="check_step-'. $prev_c .'">Back</button></div>';
 						if($c < $newCount){
-            $output .= '<div class="col-6 text-right"><a href="#mrd_checklist" class="btn btn-site-red btn-next mrdc_next_btn" data-step="mrd_s_'. $nect_c .'"  data-next="check_step-'. $nect_c .'">
+            $output .= '<div class="col-6 text-end"><a href="#mrd_checklist" class="btn btn-primary rounded btn-next mrdc_next_btn" data-step="mrd_s_'. $nect_c .'"  data-next="check_step-'. $nect_c .'">
                   Next<svg xmlns="http://www.w3.org/2000/svg" width="21.905" height="18.828" viewBox="0 0 21.905 18.828">
                     <g id="Group_902" data-name="Group 902" transform="translate(-1072.136 -8429.086)">
                       <path id="Path_5202" data-name="Path 5202" d="M1068.041,8405l8,8-8,8" transform="translate(17 25.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
@@ -243,7 +244,7 @@ class Checklist_Mrdigital_ShortCodes {
                 </a>
               </div>';
 						} else{
-							$output .= '<div class="col-6 text-right"><a href="#mrd_checklist" class="btn btn-site-red btn-next mrdc_result_btn" data-next="check_step-last">
+							$output .= '<div class="col-6 text-end"><a href="#mrd_checklist" class="btn btn-primary rounded btn-next mrdc_result_btn" data-next="check_step-last">
 	                  Submit
 	                </a>
 	              </div>';
@@ -287,7 +288,7 @@ class Checklist_Mrdigital_ShortCodes {
 									 <div class="row">
 											<div class="col-md-6">
 												 <div class="form-group form-group-seo">
-														<input type="text" class="form-control liner" placeholder="Name" id="checker_name">
+														<input type="text" class="form-control liner" value="'. $_GET['yname'] . '" placeholder="Name" id="checker_name">
 														<span class="form-group-icon">
 															 <img src="'.plugin_dir_url( __FILE__ ).'img/icon-seo-user.svg" alt="icon">
 														</span>
@@ -303,7 +304,7 @@ class Checklist_Mrdigital_ShortCodes {
 											</div>
 											<div class="col-md-6">
 												 <div class="form-group form-group-seo">
-														<input type="text" id="checker_phone" class="form-control liner" placeholder="Phone Number">
+														<input type="text" id="checker_phone" value="'. $_GET['phone'] . '" class="form-control liner" placeholder="Phone Number">
 														<span class="form-group-icon">
 															 <img src="'.plugin_dir_url( __FILE__ ).'img/icon-seo-phone.svg" alt="icon">
 														</span>
@@ -311,7 +312,7 @@ class Checklist_Mrdigital_ShortCodes {
 											</div>
 											<div class="col-md-6">
 												 <div class="form-group form-group-seo">
-														<input type="email" id="checker_email" class="form-control liner" placeholder="Email">
+														<input type="email" id="checker_email" value="'. $_GET['email'] . '" class="form-control liner" placeholder="Email">
 														<span class="form-group-icon">
 															 <img src="'.plugin_dir_url( __FILE__ ).'img/icon-seo-mail.svg" alt="icon">
 														</span>
@@ -320,7 +321,7 @@ class Checklist_Mrdigital_ShortCodes {
 											<div class="col-md-12 mt-4 text-center">
 												<div class="required_text"></div>
 												<input type="hidden" id="mrd_checklist_id" value="'.$checklist_id.'" />
-												 <button class="btn btn-site-red" id="checker_submit"><img src="'.plugin_dir_url( __FILE__ ).'img/icon-send-mail.svg" class="mr-3" alt="media">Email My Detailed Report</button>
+												 <button class="btn btn-primary rounded" id="checker_submit"><img src="'.plugin_dir_url( __FILE__ ).'img/icon-send-mail.svg" class="mr-3" alt="media">Email My Detailed Report</button>
 												 <div id="mrd_checklist_alert"></div>
 											</div>
 									 </div>

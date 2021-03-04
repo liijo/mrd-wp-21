@@ -8,11 +8,11 @@
 						jQuery('#checker_name').addClass('error');
 						return;
 					}
-					if(jQuery('#checker_phone').val() == ''){
-						jQuery('.required_text').text('Please fill the required fields!').addClass('show');
-						jQuery('#checker_phone').addClass('error');
-						return;
-					}
+					// if(jQuery('#checker_phone').val() == ''){
+					// 	jQuery('.required_text').text('Please fill the required fields!').addClass('show');
+					// 	jQuery('#checker_phone').addClass('error');
+					// 	return;
+					// }
 					if(jQuery('#checker_email').val() == ''){
 						jQuery('.required_text').text('Please fill the required fields!').addClass('show');
 						jQuery('#checker_email').addClass('error');
@@ -71,6 +71,7 @@
 							jQuery('#checker_name').val('');
 							jQuery('#checker_phone').val('');
 							jQuery('#checker_email').val('');
+							location = data.redirect;
             }
             // Alert Request Result
             jQuery('#mrd_checklist_alert').empty().append(data.response);
